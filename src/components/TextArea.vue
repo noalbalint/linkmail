@@ -1,22 +1,18 @@
 <template>
-  <div>
-    <div class="flex flex-col p-2">
-      <label class="flex">
-        <span class="opacity-50">{{ label }}</span>
-        <textarea
-          class="h-auto"
-          @input="onInput"
-          :style="`min-height: ${height}px;`"
-        />
-      </label>
-    </div>
+  <div class="flex flex-col p-2">
+    <label class="flex flex-grow">
+      <span class="opacity-50">{{ label }}</span>
+      <textarea
+        class="h-auto"
+        @input="onInput"
+      />
+    </label>
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   label: string,
-  height?: string,
 }>()
 
 const emit = defineEmits<{
