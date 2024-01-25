@@ -1,22 +1,21 @@
 <template>
   <div class="px-8 max-w-3xl w-full flex flex-col items-center">
     <h1 class="text-2xl"> Linkmail: Create and Share Prewritten Emails </h1>
+    <h2 class="text-md pt-2"> (Where mailto links wouldn't usually work - eg instagram) </h2>
 
-    <span class="pt-16 pb-2"> 1. Draft your email </span>
+    <span class="pt-8 pb-2"> 1. Draft your email </span>
     <DraftEmail v-model="mailtoLink" />
 
-    <span class="pt-16 pb-2"> 2. Test your link </span>
+    <span class="pt-8 pb-2"> 2. Test your link </span>
     <a
       :href="mailtoLink"
       target="_blank"
     >{{ mailtoLink }}</a>
 
-    <span class="pt-16 pb-2"> 3. (optional) shorten your link with tinyurl </span>
-    <iframe
-      src="https://tinyurl.com/app"
-      frameborder="0"
-    ></iframe>
+    <span class="pt-8 pb-1"> 3. Shorten your link </span>
+    <span class="pb-2 text-xs"> (generally optional, but necessary for instagram) </span>
 
+    <span> Integrated link shortening coming soon! For now, please use <a href="tinyurl.com/app"> tinyurl.com </a></span>
   </div>
 </template>
 
