@@ -581,6 +581,14 @@ video {
   max-width: 48rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-8 {
+  max-width: 2rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -591,6 +599,14 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .border-2 {
