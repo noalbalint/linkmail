@@ -65,7 +65,8 @@ let subjectInput = ref('');
 let bodyInput = ref('');
 
 watchEffect(() => {
-  let link = `mailto:${toInput.value}?`
+  // TODO: update to linkmail.co
+  let link = `http://localhost:5173/consume?mailto:${toInput.value}?`
 
   if (ccInput.value) {
     link += `&cc=${ccInput.value}`
