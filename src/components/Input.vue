@@ -18,7 +18,7 @@ const emit = defineEmits<{
 
 function onInput(event: Event): void {
   // Send the updated value to the parent
-  const textarea = event.target as HTMLTextAreaElement;
-  emit('update:modelValue', textarea.value);
+  const input = event.target as HTMLInputElement;
+  emit('update:modelValue', input.value);
 }
 </script>
