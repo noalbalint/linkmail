@@ -1,6 +1,6 @@
 <template>
-  <!-- TODO: find a formatter that will wrap these automatically like the attributes -->
-  <div class="w-full border-solid border-black border-2 text-left min-h-[90vh] my-[5vh] flex flex-col">
+  <!-- TODO: find a formatter that will newline wrap classes like attributes -->
+  <div class="w-full border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
     <section class="flex items-center">
       <Input
         label="To:"
@@ -42,11 +42,6 @@
       class="flex-grow"
       v-model="bodyInput"
     />
-
-    <a
-      :href="mailtoLink"
-      target="_blank"
-    >{{ mailtoLink }}</a>
   </div>
 </template>
 
@@ -54,7 +49,11 @@
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
 import Button from './Button.vue'
-import { ref, computed } from 'vue';
+import { ref, watchEffect } from 'vue';
+
+const emit = defineEmits<{
+  (emit: 'update:modelValue', type: string): void;
+}>()
 
 let showCc = ref(false);
 let showBcc = ref(false);
@@ -65,7 +64,7 @@ let bccInput = ref('');
 let subjectInput = ref('');
 let bodyInput = ref('');
 
-const mailtoLink = computed(() => {
+watchEffect(() => {
   let link = `mailto:${toInput.value}?`
 
   if (ccInput.value) {
@@ -81,8 +80,10 @@ const mailtoLink = computed(() => {
     link += `&body=${encodeURIComponent(bodyInput.value)}`
   }
 
-  // .replace only replaces the first instance
+  // .replace only replaces the first instance :)
   link = link.replace("?&", "?");
+
+  emit('update:modelValue', link);
 
   return link;
 });

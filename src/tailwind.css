@@ -553,6 +553,11 @@ video {
   margin-bottom: 5vh;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mt-\[10vh\] {
   margin-top: 10vh;
 }
@@ -561,8 +566,16 @@ video {
   margin-top: 5vh;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-auto {
@@ -571,6 +584,18 @@ video {
 
 .min-h-\[90vh\] {
   min-height: 90vh;
+}
+
+.min-h-\[50vh\] {
+  min-height: 50vh;
+}
+
+.min-h-\[0vh\] {
+  min-height: 0vh;
+}
+
+.min-h-\[60vh\] {
+  min-height: 60vh;
 }
 
 .w-full {
@@ -644,12 +669,55 @@ video {
   padding-right: 2rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pr-2 {
   padding-right: 0.5rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
 .text-left {
   text-align: left;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-100 {
