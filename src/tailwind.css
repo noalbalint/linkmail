@@ -544,8 +544,21 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.my-\[5vh\] {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
 .mt-\[10vh\] {
   margin-top: 10vh;
+}
+
+.mt-\[5vh\] {
+  margin-top: 5vh;
 }
 
 .flex {
@@ -576,8 +589,16 @@ video {
   flex-direction: column;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b-0 {
