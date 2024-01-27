@@ -6,7 +6,7 @@ import ConsumeVue from '../pages/Consume.vue';
 
 const routes = [
   { path: '/', component: CreateVue },
-  { path: '/consume', component: ConsumeVue },
+  { path: '/consume', component: ConsumeVue, },
 ]
 
 const router = createRouter({
