@@ -9,17 +9,15 @@
 import { useRoute } from 'vue-router';
 import { ref } from 'vue';
 
-const mailtoLink = `mailto:${useRoute().query.mailto}`;
+const mailtoTarget = window.location.href.match(/mailto=(.*)/);
+const mailtoLink = `mailto:${mailtoTarget[1]}`;
 
 let timeoutComplete = ref(false);
 
 setTimeout(() => {
-  console.log('timeout complete');
   timeoutComplete.value = true;
 }, 5000);
 
 window.location.href = mailtoLink;
 
 </script>
-<style scoped>
-</style>
