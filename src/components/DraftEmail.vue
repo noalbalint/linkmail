@@ -8,12 +8,14 @@
       />
       <Button
         class="m-2"
+        minWidth="64px"
         label="Cc:"
         tabindex="-1"
         @click="showCc = !showCc"
       />
       <Button
         class="m-2"
+        minWidth="64px"
         label="Bcc:"
         tabindex="-1"
         @click="showBcc = !showBcc"

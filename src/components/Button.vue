@@ -1,24 +1,23 @@
 <template>
-  <button>
+  <button :style="`min-width: ${minWidth};`">
     {{ label }}
   </button>
 </template>
 
 <script setup lang="ts">
-defineProps<{ label: string }>()
+defineProps<{ label: string, minWidth?: string }>()
 </script>
 
 <style scoped>
 button {
   outline: none;
-  border: 2px solid #76B39D;
+  border: 2px solid gray;
   opacity: 0.5;
   padding: 0.5rem;
   margin: 0.5rem;
-  min-width: 4rem;
 }
 
 button:hover {
-  background-color: #76B39D;
+  background-color: darkgray;
 }
 </style>

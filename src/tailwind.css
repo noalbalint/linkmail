@@ -572,6 +572,10 @@ video {
   width: 100%;
 }
 
+.min-w-32 {
+  min-width: 8rem;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -639,6 +643,10 @@ video {
   padding-top: 2rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -651,6 +659,19 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-100 {
