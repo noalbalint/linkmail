@@ -1,16 +1,20 @@
 <template>
-  <label class="pr-2 w-full p-2 flex">
-    <span class="opacity-50">{{ label }}</span>
+  <label class="w-full p-2 flex">
+    <span>{{ label }}</span>
     <input
       type="text"
       @input="onInput"
-      class="outline-none w-full px-2 opacity-100"
+      class="outline-none w-full pl-2 opacity-100"
+      :placeholder="placeholder"
     />
   </label>
 </template>
 
 <script setup lang="ts">
-defineProps<{ label: string }>()
+defineProps<{
+  label?: string,
+  placeholder?: string,
+}>()
 
 const emit = defineEmits<{
   (name: 'update:modelValue', type: string): void;

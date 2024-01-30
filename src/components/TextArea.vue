@@ -1,10 +1,11 @@
 <template>
   <div class="flex flex-col p-2">
     <label class="flex flex-grow">
-      <span class="opacity-50">{{ label }}</span>
+      <span>{{ label }}</span>
       <textarea
         class="h-auto"
         @input="onInput"
+        :placeholder="placeholder"
       />
     </label>
   </div>
@@ -13,6 +14,7 @@
 <script setup lang="ts">
 defineProps<{
   label: string,
+  placeholder?: string,
 }>()
 
 const emit = defineEmits<{

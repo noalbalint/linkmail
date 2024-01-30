@@ -1,20 +1,17 @@
 <template>
-  <div class="px-8 max-w-3xl w-full flex flex-col items-center">
-    <h1 class="text-2xl"> Linkmail: Share Prewritten Emails as Links </h1>
+  <div class="max-w-3xl w-full flex flex-col items-center">
+    <h1 class="text-2xl pb-8"> Linkmail: Share Prewritten Emails as Links </h1>
 
-    <span class="pt-8 pb-2 font-bold"> 1. Draft your email </span>
-    <DraftEmail v-model="mailtoLink" />
+    <DraftEmail
+      class="mb-6"
+      v-model="mailtoLink"
+    />
 
-    <a
-      :href="mailtoLink"
-      target="_blank"
-      class="pt-2"
-    >{{ mailtoLink }}</a>
     <div>
       <Button
         label="test link"
         minWidth="100px"
-        class=" min-w-32"
+        class="mr-4 min-w-32"
         @click="testLink()"
       >
         <a

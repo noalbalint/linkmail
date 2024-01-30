@@ -14,7 +14,6 @@ button {
   border: 2px solid gray;
   opacity: 0.5;
   padding: 0.5rem;
-  margin: 0.5rem;
 }
 
 button:hover {

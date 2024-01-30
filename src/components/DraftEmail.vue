@@ -1,21 +1,22 @@
 <template>
   <!-- TODO: find a formatter that will newline wrap classes like attributes -->
-  <div class="w-full border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
+  <div class="w-full shadow-md border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
     <section class="flex items-center">
       <Input
         label="To:"
+        placeholder="example@gmail.com"
         v-model="toInput"
       />
       <Button
-        class="m-2"
-        minWidth="64px"
+        class="mr-2 mt-2 text-sm"
+        minWidth="48px"
         label="Cc:"
         tabindex="-1"
         @click="showCc = !showCc"
       />
       <Button
-        class="m-2"
-        minWidth="64px"
+        class="mr-2 mt-2 text-sm"
+        minWidth="48px"
         label="Bcc:"
         tabindex="-1"
         @click="showBcc = !showBcc"
@@ -27,13 +28,16 @@
       label="Cc:"
       v-model="ccInput"
     />
+
     <TextArea
       v-if="showBcc"
       label="Bcc:"
       v-model="bccInput"
     />
+
     <Input
       label="Subject:"
+      placeholder="Made with linkmail.co!"
       v-model="subjectInput"
     />
 
@@ -41,6 +45,7 @@
 
     <TextArea
       label="Body:"
+      placeholder="Write your compelling, inspiring email here"
       class="flex-grow"
       v-model="bodyInput"
     />
