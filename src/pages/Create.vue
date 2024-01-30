@@ -1,11 +1,9 @@
 <template>
   <div class="px-8 max-w-3xl w-full flex flex-col items-center">
-    <h1 class="text-2xl"> Linkmail: Create and Share Prewritten Emails </h1>
-    <h2 class="text-md pt-2"> (Where mailto links wouldn't usually work - eg instagram) </h2>
+    <h1 class="text-2xl"> Linkmail: Share Prewritten Emails as Links </h1>
 
     <span class="pt-8 pb-2 font-bold"> 1. Draft your email </span>
     <DraftEmail v-model="mailtoLink" />
-
 
     <a
       :href="mailtoLink"
@@ -52,7 +50,7 @@ let mailtoLink = ref('');
 let linkCopied = ref(false);
 
 function testLink() {
-  window.open(mailtoLink.value, '_blank');
+  window.open(`/consume?mailto=${mailtoLink.value}`, '_blank');
 }
 
 async function copyLinkToClipboard() {
