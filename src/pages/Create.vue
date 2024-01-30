@@ -56,16 +56,12 @@ function testLink() {
 }
 
 async function copyLinkToClipboard() {
-  try {
-    await navigator.clipboard.writeText(mailtoLink.value);
-    linkCopied.value = true;
+  await navigator.clipboard.writeText(mailtoLink.value);
+  linkCopied.value = true;
 
-    setTimeout(() => {
-      linkCopied.value = false;
-    }, 3000);
-  } catch (err) {
-    alert('Failed to copy text: ', err);
-  }
+  setTimeout(() => {
+    linkCopied.value = false;
+  }, 3000);
 }
 </script>
 

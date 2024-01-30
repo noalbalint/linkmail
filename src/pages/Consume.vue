@@ -6,10 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
 import { ref } from 'vue';
 
-const mailtoTarget = window.location.href.match(/mailto=(.*)/);
+const mailtoTarget = window.location.href.match(/mailto=(.*)/) ?? '';
 const mailtoLink = `mailto:${mailtoTarget[1]}`;
 
 let timeoutComplete = ref(false);
