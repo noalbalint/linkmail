@@ -4,6 +4,10 @@ For local development:
 - npm run dev
 - npx tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch
 
+To deploy:
+- npm run build
+- firebase deploy
+
 ## Default notes created on init: 
 
 ### Vue 3 + TypeScript + Vite
