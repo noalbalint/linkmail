@@ -1,6 +1,6 @@
 <template>
   <!-- TODO: find a formatter that will newline wrap classes like attributes -->
-  <div class="w-full shadow-md border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
+  <div class="draft-email w-full shadow-md border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
     <section class="flex items-center">
       <Input
         label="To:"
@@ -37,7 +37,7 @@
 
     <Input
       label="Subject:"
-      placeholder="Made with linkmail.co!"
+      placeholder="Made with linkmail.co"
       v-model="subjectInput"
     />
 
@@ -45,7 +45,7 @@
 
     <TextArea
       label="Body:"
-      placeholder="Write your compelling, inspiring email here"
+      placeholder="Write your compelling email here!"
       class="flex-grow"
       v-model="bodyInput"
     />
@@ -100,3 +100,8 @@ watchEffect(() => {
 });
 
 </script>
+<style>
+.draft-email {
+  background-color: white;
+}
+</style>

@@ -1,7 +1,5 @@
 <template>
   <div class="max-w-3xl w-full flex flex-col items-center">
-    <h1 class="text-2xl pb-8"> Linkmail: Share Prewritten Emails as Links </h1>
-
     <DraftEmail
       class="mb-6"
       v-model="mailtoLink"
@@ -9,9 +7,16 @@
 
     <div>
       <Button
-        label="test link"
+        :label="linkCopied ? 'Copied!' : 'Copy'"
+        type="primary"
         minWidth="100px"
-        class="mr-4 min-w-32"
+        class="mr-4"
+        @click="copyLinkToClipboard()"
+      />
+      <Button
+        label="Test"
+        type="primary"
+        minWidth="100px"
         @click="testLink()"
       >
         <a
@@ -19,20 +24,15 @@
           target="_blank"
         ></a>
       </Button>
-      <Button
-        minWidth="100px"
-        :label="linkCopied ? 'copied!' : 'copy link'"
-        @click="copyLinkToClipboard()"
-      />
     </div>
 
 
-    <span class="pt-8 pb-1 font-bold"> 2. Shorten your link with <a href="tinyurl.com/app"> tinyurl.com </a></span>
-    <span class="pb-2 text-xs"> (technically optional, but necessary for instagram) </span>
-    <span class="pb-4"> Integrated link shortening coming soon! </span>
-
-    <span class="pt-8 pb-2 font-bold"> 3. Share </span>
-    <span class="pb-4"> You're all set, go change the world :) </span>
+    <span class="pt-8 pb-1 max-w-xl">
+      Note: many services (such as Instagram) have limits on how long a link can be. In the future Linkmail will
+      automatically
+      shorten
+      links, but for now we recommend using <a href="tinyurl.com/app"> tinyurl.com </a> :)
+    </span>
   </div>
 </template>
 
