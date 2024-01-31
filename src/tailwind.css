@@ -548,7 +548,8 @@ video {
   position: relative;
 }
 
-.mb-6 {
+.my-6 {
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -576,6 +577,10 @@ video {
   height: auto;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .max-h-8 {
   max-height: 2rem;
 }
@@ -588,24 +593,12 @@ video {
   width: 100%;
 }
 
-.max-w-3xl {
-  max-width: 48rem;
-}
-
-.max-w-xl {
-  max-width: 36rem;
-}
-
-.max-w-4xl {
-  max-width: 56rem;
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .max-w-5xl {
   max-width: 64rem;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
 }
 
 .flex-grow {
@@ -645,6 +638,11 @@ video {
   padding: 0.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -659,6 +657,10 @@ video {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
 }
 
 .pt-8 {
@@ -677,6 +679,10 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-100 {
@@ -763,12 +769,15 @@ button:focus-visible {
   padding: 2em;
 }
 
+/* Important global styles */
+
 #app {
-  display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
+}
+
+body {
   background-color: #dfd7a83a;
 }
 
@@ -784,5 +793,11 @@ button:focus-visible {
 
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mt-16 {
+    margin-top: 4rem;
   }
 }

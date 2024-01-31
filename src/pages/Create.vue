@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-5xl w-full flex flex-col items-center">
+  <div class="max-w-5xl pt-12 w-full flex flex-col items-center">
     <DraftEmail
-      class="mb-6"
+      class="my-6 lg:mt-16"
       v-model="mailtoLink"
     />
 
@@ -27,9 +27,12 @@
     </div>
 
 
-    <span class="pt-8 pb-1 max-w-2xl">
+    <span class="pt-8 pb-1 px-2 max-w-2xl">
       Note: many services (such as Instagram) only allow short links. In the future Linkmail will
-      automatically shorten links, but for now we recommend using <a href="tinyurl.com/app"> tinyurl.com </a> :)
+      provide automatic link shortening, but for now we recommend using <a
+        href="tinyurl.com/app"
+        class="underline"
+      > tinyurl.com </a> :)
     </span>
   </div>
 </template>

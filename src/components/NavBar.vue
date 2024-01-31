@@ -12,15 +12,11 @@
       </NavButton>
       <NavButton
         to="/"
-        label="Home"
+        label="Create"
       />
       <NavButton
-        to="/about"
-        label="About"
-      />
-      <NavButton
-        to="/consume"
-        label="Consume"
+        to="/demo"
+        label="How does it work?"
       />
     </div>
     <NavButton

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex h-full flex-col items-center">
     <NavBar />
     <router-view style="padding: 1rem;" />
   </div>
