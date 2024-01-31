@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-3xl w-full flex flex-col items-center">
+  <div class="max-w-5xl w-full flex flex-col items-center">
     <DraftEmail
       class="mb-6"
       v-model="mailtoLink"
@@ -27,11 +27,9 @@
     </div>
 
 
-    <span class="pt-8 pb-1 max-w-xl">
-      Note: many services (such as Instagram) have limits on how long a link can be. In the future Linkmail will
-      automatically
-      shorten
-      links, but for now we recommend using <a href="tinyurl.com/app"> tinyurl.com </a> :)
+    <span class="pt-8 pb-1 max-w-2xl">
+      Note: many services (such as Instagram) only allow short links. In the future Linkmail will
+      automatically shorten links, but for now we recommend using <a href="tinyurl.com/app"> tinyurl.com </a> :)
     </span>
   </div>
 </template>
