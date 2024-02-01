@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center justify-center min-h-screen">
     <span class="text-2xl pb-2"> Opening default email client... </span>
-    <span v-if="timeoutComplete"> No client not found! :( </span>
+    <span class="min-h-6"> {{ timeoutComplete ? 'No client found! :(' : '' }} </span>
   </div>
 </template>
 
