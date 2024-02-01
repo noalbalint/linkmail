@@ -11,7 +11,7 @@
         />
       </NavButton>
       <NavButton
-        to="/"
+        to="/create"
         label="Create"
       />
       <NavButton

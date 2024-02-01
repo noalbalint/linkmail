@@ -27,8 +27,8 @@
     </div>
 
 
-    <span class="pt-8 pb-1 px-2 max-w-2xl">
-      Note: many services (such as Instagram) only allow short links. In the future Linkmail will
+    <span class="pt-8 pb-1 px-2 max-w-3xl">
+      Note: many services (such as Instagram) do not support such long links. In the future Linkmail will
       provide automatic link shortening, but for now we recommend using <a
         href="tinyurl.com/app"
         class="underline"

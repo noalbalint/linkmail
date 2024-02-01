@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import CreateVue from '../pages/Create.vue';
 import ConsumeVue from '../pages/Consume.vue';
+import HomeVue from '../pages/Home.vue';
 
 // TODO: code splitting
 
 const routes = [
-  { path: '/', component: CreateVue },
+  { path: '/', component: HomeVue },
+  { path: '/create', component: CreateVue },
   { path: '/consume', component: ConsumeVue, },
 ]
 
