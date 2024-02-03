@@ -3,21 +3,22 @@
     <span class="hero text-6xl md:text-8xl">
       EMAIL CANVASSING <br> FOR THE MODERN ERA
     </span>
-    <span class="subtitle leading-6 md:text-2xl text-sm py-12">
-      Create ultra-simple one-click engagement links:
-      <br>
-      when it's easy to take action, more people do.
-    </span>
+    <nobr class="subtitle leading-6 md:text-2xl text-lg py-12">
+      When it's easy to take action, <wbr> more people do.
+    </nobr>
     <div>
       <RouterLink to="/#demo">
         <Button
-          class="mr-4"
+          class="mr-8 text-lg"
+          minWidth="120px"
           type="primary"
           label="Learn More"
         />
       </RouterLink>
       <RouterLink to="/create">
         <Button
+          class="text-lg"
+          minWidth="120px"
           type="primary"
           label="Try Now"
         />
