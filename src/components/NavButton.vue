@@ -31,6 +31,7 @@ button {
   outline: none;
   border: none;
   padding: 0.5rem;
+  border-radius: 8px;
   background-color: unset;
 }
 

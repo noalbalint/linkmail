@@ -9,15 +9,19 @@
       when it's easy to take action, more people do.
     </span>
     <div>
-      <Button
-        class="mr-4"
-        type="primary"
-        label="Learn More"
-      />
-      <Button
-        type="primary"
-        label="Try Now"
-      />
+      <RouterLink to="/#demo">
+        <Button
+          class="mr-4"
+          type="primary"
+          label="Learn More"
+        />
+      </RouterLink>
+      <RouterLink to="/create">
+        <Button
+          type="primary"
+          label="Try Now"
+        />
+      </RouterLink>
     </div>
   </div>
 </template>

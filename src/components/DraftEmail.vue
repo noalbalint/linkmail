@@ -10,6 +10,7 @@
       <Button
         class="mr-2 mt-2 text-sm"
         minWidth="48px"
+        type="secondary"
         label="Cc:"
         tabindex="-1"
         @click="showCc = !showCc"
@@ -17,6 +18,7 @@
       <Button
         class="mr-2 mt-2 text-sm"
         minWidth="48px"
+        type="secondary"
         label="Bcc:"
         tabindex="-1"
         @click="showBcc = !showBcc"

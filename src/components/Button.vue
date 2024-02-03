@@ -3,16 +3,18 @@
     :style="`min-width: ${minWidth};`"
     :class="{
       'primary': type === 'primary',
-      'opacity-50': type === 'secondary',
+      'secondary': type === 'secondary',
     }"
   >
-    {{ label }}
+    <slot>
+      {{ label }}
+    </slot>
   </button>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-  label: string,
+  label?: string,
   minWidth?: string,
   type?: string,
 }>()
@@ -23,7 +25,7 @@ button {
   outline: none;
   border: none;
   padding: 0.5rem;
-  background-color: #f1f1f1;
+  border-radius: 8px;
 }
 
 button.primary {
@@ -31,13 +33,16 @@ button.primary {
   color: white;
 }
 
+button.secondary {
+  background-color: whitesmoke;
+}
+
 button.primary:hover {
   outline: none;
   background-color: #4713f3bb;
 }
 
-button:hover {
-  outline: none;
-  background-color: whitesmoke;
+button:active {
+  transform: scale(0.95);
 }
 </style>

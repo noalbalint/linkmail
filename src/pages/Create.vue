@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-5xl pt-12 w-full flex flex-col items-center">
+  <div class="max-w-5xl lg:pt-12 w-full flex flex-col items-center">
     <DraftEmail
-      class="my-6 lg:mt-16"
+      class="mb-6 lg:mt-16"
       v-model="mailtoLink"
     />
 
@@ -18,12 +18,7 @@
         type="primary"
         minWidth="100px"
         @click="testLink()"
-      >
-        <a
-          :href="mailtoLink"
-          target="_blank"
-        ></a>
-      </Button>
+      />
     </div>
 
 
