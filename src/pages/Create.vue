@@ -47,7 +47,8 @@ function testLink() {
 }
 
 async function copyLinkToClipboard() {
-  await navigator.clipboard.writeText(mailtoLink.value);
+  const link = `linkmail.co/consume?mailto=${mailtoLink.value}`
+  await navigator.clipboard.writeText(link);
   linkCopied.value = true;
 
   setTimeout(() => {
