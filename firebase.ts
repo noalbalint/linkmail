@@ -1,29 +1,27 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
-// Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDc-M4faZBHDfz8nPgFMm7_j3U2IdtHc1I",
-  authDomain: "noalat-6ee87.firebaseapp.com",
-  projectId: "noalat-6ee87",
-  storageBucket: "noalat-6ee87.appspot.com",
-  messagingSenderId: "346480650718",
-  appId: "1:346480650718:web:9a8fb39f871b287258954f",
-  measurementId: "G-W65MTCYXBN"
+  apiKey: "AIzaSyB0Bp81VTlPDYFXtieyKAA3Zy0ulkngqyA",
+  authDomain: "linkmail-35c34.firebaseapp.com",
+  projectId: "linkmail-35c34",
+  storageBucket: "linkmail-35c34.appspot.com",
+  messagingSenderId: "774259354996",
+  appId: "1:774259354996:web:054fd007fcf631f03ad021",
+  measurementId: "G-9G7NFENEXL"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// TODO: fix permissions config. seems I'm missing this at the moment.
 
-// Analytics
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const analytics = getAnalytics(app); // is this hooked up yet? or just copied from AtNoal
 
 export {
   app,
+  db,
   analytics,
   logEvent,
 }

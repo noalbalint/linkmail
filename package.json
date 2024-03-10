@@ -10,7 +10,7 @@
     "deploy": "npm run build && firebase deploy && git push"
   },
   "dependencies": {
-    "firebase": "^10.7.2",
+    "firebase": "^10.8.0",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
