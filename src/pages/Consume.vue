@@ -1,18 +1,12 @@
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen">
-    <span class="text-2xl pb-2"> Opening default email client... </span>
-    <span class="min-h-6">
-      {{
-        timeoutComplete
-        ? 'No email app found! Please check your device settings and try again'
-        : ''
-      }}
-    </span>
+    <span class="text-2xl pb-4"> Opening default email app... {{ timeoutComplete ? 'None found!' : '' }} </span>
+    <span> {{ errorMessage }} </span>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { db } from '../../firebase.ts'
 import { doc, getDoc } from "firebase/firestore";
 
@@ -21,6 +15,19 @@ setTimeout(() => {
 }, 5000);
 
 let timeoutComplete = ref(false);
+let emailNotFound = ref(false);
+
+const errorMessage = computed((): string => {
+  if (emailNotFound.value) {
+    return 'Sorry, that link is invalid!'
+  }
+
+  if (!emailNotFound.value && timeoutComplete.value) {
+    return 'Please check your device settings and try again :)'
+  }
+
+  return '';
+});
 
 const urlParams = new URLSearchParams(window.location.search);
 const mailCode = urlParams.get('email');
@@ -33,6 +40,7 @@ async function getEmail(): Promise<string | null> {
     if (docSnap.exists()) {
       return docSnap.data()?.mailto;
     } else {
+      emailNotFound.value = true;
       return null;
     }
   } catch (error) {
