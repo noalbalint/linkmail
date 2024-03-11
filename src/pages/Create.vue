@@ -7,13 +7,16 @@
 
     <div>
       <Button
-        v-if="!linkCreated"
-        label="Generate"
+        v-if="!linkCreated && !linkLoading"
+        label="Create Link"
         type="primary"
-        minWidth="100px"
+        minWidth="140px"
         @click="createNewLinkmail()"
       />
-      <div v-else class="flex items-center">
+
+      <LoadingSpinner v-else-if="linkLoading"/>
+
+      <div v-else-if="linkCreated" class="flex items-center">
         <a
           :href="linkmailCode"
           target="_blank"
@@ -41,6 +44,7 @@
 <script setup lang="ts">
 // TODO: @ alias; avoid relative imports
 import DraftEmail from '../components/DraftEmail.vue'
+import LoadingSpinner from '../components/LoadingSpinner.vue';
 import Button from '../components/Button.vue'
 import { ref } from 'vue';
 import { addDoc, collection } from "firebase/firestore";
@@ -49,6 +53,7 @@ import { db } from '../../firebase.ts'
 let mailtoLink = ref('');
 let linkmailCode = ref('');
 let linkCopied = ref(false);
+let linkLoading = ref(false);
 let linkCreated = ref(false);
 
 async function setEmailInDB() {
@@ -59,9 +64,11 @@ async function setEmailInDB() {
 }
 
 async function createNewLinkmail() {
+  linkLoading.value = true;
   const newId = await setEmailInDB();
   linkmailCode.value = `https://linkmail.co/consume?mailcode=${newId}`;
   linkCreated.value = true;
+  linkLoading.value = false;
 }
 
 async function copyLinkToClipboard() {
