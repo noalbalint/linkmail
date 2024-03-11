@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen">
-    <span class="text-2xl pb-4"> Opening default email app... {{ timeoutComplete ? 'None found!' : '' }} </span>
+    <span class="text-2xl pb-4"> {{ linkValidButNoEmailApp ? 'No email app found!' : 'Opening default email app...' }} </span>
     <span> {{ errorMessage }} </span>
   </div>
 </template>
@@ -17,12 +17,16 @@ setTimeout(() => {
 let timeoutComplete = ref(false);
 let emailNotFound = ref(false);
 
+const linkValidButNoEmailApp = computed((): boolean => {
+  return (emailNotFound.value === false) && timeoutComplete.value;
+});
+
 const errorMessage = computed((): string => {
   if (emailNotFound.value) {
     return 'Sorry, that link is invalid!'
   }
 
-  if (!emailNotFound.value && timeoutComplete.value) {
+  if (timeoutComplete.value) {
     return 'Please check your device settings and try again :)'
   }
 
