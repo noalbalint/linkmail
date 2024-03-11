@@ -30,7 +30,7 @@ const errorMessage = computed((): string => {
 });
 
 const urlParams = new URLSearchParams(window.location.search);
-const mailCode = urlParams.get('email');
+const mailCode = urlParams.get('mailcode');
 
 async function getEmail(): Promise<string | null> {
   try {

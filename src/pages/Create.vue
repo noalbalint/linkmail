@@ -7,28 +7,34 @@
 
     <div>
       <Button
-        :label="linkCopied ? 'Copied!' : 'Copy'"
+        v-if="!linkCreated"
+        label="Generate"
         type="primary"
         minWidth="100px"
-        class="mr-4"
-        @click="copyLinkToClipboard()"
+        @click="createNewLinkmail()"
       />
-      <Button
-        label="Test"
-        type="primary"
-        minWidth="100px"
-        @click="testLink()"
-      />
+      <div v-else class="flex items-center">
+        <a
+          :href="linkmailCode"
+          target="_blank"
+          class="underline text-lg"
+        >{{ linkmailCode }}</a>
+        <Button
+          type="secondary"
+          minWidth="100px"
+          class="ml-4"
+          @click="copyLinkToClipboard()"
+        >
+          <div class="flex justify-center">
+            <i
+              @click="copyLinkToClipboard()"
+              class="material-icons pr-1"
+            >content_copy</i>
+            {{ linkCopied ? 'Copied!' : 'Copy' }}
+          </div>
+        </Button>
+      </div>
     </div>
-
-
-    <span class="pt-8 pb-1 px-2 max-w-3xl">
-      Note: many services (such as Instagram) do not support such long links. In the future Linkmail will
-      provide automatic link shortening, but for now we recommend using <a
-        href="https://tinyurl.com/app"
-        class="underline"
-      > tinyurl.com </a> :)
-    </span>
   </div>
 </template>
 
@@ -37,23 +43,30 @@
 import DraftEmail from '../components/DraftEmail.vue'
 import Button from '../components/Button.vue'
 import { ref } from 'vue';
+import { addDoc, collection } from "firebase/firestore";
+import { db } from '../../firebase.ts'
 
 let mailtoLink = ref('');
-
+let linkmailCode = ref('');
 let linkCopied = ref(false);
+let linkCreated = ref(false);
 
-function testLink() {
-  window.open(`/consume?mailto=${mailtoLink.value}`, '_blank');
+async function setEmailInDB() {
+  const docRef = await addDoc(collection(db, "emails"), {
+    mailto: mailtoLink.value,
+  });
+  return docRef.id;
+}
+
+async function createNewLinkmail() {
+  const newId = await setEmailInDB();
+  linkmailCode.value = `https://linkmail.co/consume?mailcode=${newId}`;
+  linkCreated.value = true;
 }
 
 async function copyLinkToClipboard() {
-  const link = `linkmail.co/consume?mailto=${mailtoLink.value}`
-  await navigator.clipboard.writeText(link);
+  await navigator.clipboard.writeText(linkmailCode.value);
   linkCopied.value = true;
-
-  setTimeout(() => {
-    linkCopied.value = false;
-  }, 3000);
 }
 </script>
 

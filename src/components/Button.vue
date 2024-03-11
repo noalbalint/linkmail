@@ -33,13 +33,18 @@ button.primary {
   color: white;
 }
 
-button.secondary {
-  background-color: whitesmoke;
-}
-
 button.primary:hover {
   outline: none;
   background-color: #4713f3bb;
+}
+
+button.secondary {
+  background-color: none;
+}
+
+button.secondary:hover {
+  outline: none;
+  background-color: #e6e0d1;
 }
 
 button:active {
