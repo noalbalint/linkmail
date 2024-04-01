@@ -1,18 +1,20 @@
-### Motivation
+## Project Outline
 
-In USA and Canada, it is common to send an email to your political representative outlining your position. These emails are then collected and categorized by office staff, and the lawmaker will get a daily summary of how many people wrote in support or opposition of each topic. 
+In the USA and Canada, creating an email campaign for a political topic is a great way to bring it to lawmakers' attention. These emails are collected, categorized, and reported by office staff daily, and if a lawmaker is not completely corrupt, this will influence their position on the topic.
 
-Larger NGOs and political organizations have dedicated webforms for this type of thing, for example [Ancient Ecosystem Aliance](https://ancientforestalliance.org/take-action-for-forests/call-for-ecosystem-based-targets/). But smaller grassroots micro-campaigners generally do not have time of interest for such an involved solution. The standard approach is to put everything in a google doc and ask supporters to copy/paste this into an email manually. 
+Because it can be overwhelming for individuals to write personalized emails for every cause they care about, some larger organizations (for example, [Ancient Forest Aliance](https://ancientforestalliance.org/take-action-for-forests/call-for-ecosystem-based-targets/)) have built dedicated webforms with pre-written emails that their members can easily sign and send.
 
-Linkmail eliminates the hassle of this manual copy-pasting process. 
+However, this type of solution is relatively time-consuming to set up, and generally out of reach grassroots micro-campaigners.
 
-Since many campaigners share their campaigns via social media platforms like Instagram, supporters are generally more in the mood to mindlessly scroll and not in the mood to put in a lot of effort. So the friction of switching between apps, copying and pasting multiple sections, and being forced to abandon their scrolling session causes many supporters to be lost. "I'll do it later," they think.
+The current solution for most micro-campaigners is to put the information in a Google Doc, share it on social media, and ask supporters to manually copy/paste the recipient, subject, and body fields into an email.
 
-So although the benefit provided by using Linkmail seems marginal, given the context of it's application, this small improvement can have a big impact. 
+Unfortunately, the dopamine-rich social media landscape of social media is extremely unconducive to even such a trivial task. The small friction of switching between 3 apps and the awkward text editing functionality of smartphones causes many potential supporters to abandon their email and return to their scrolling session. 
 
-Also, when a government office receives thousands of identical emails, they put less value on them. If we can instead have hundreds of micro-campaigners writing personal emails which dozens of their friends will support, this will be more effective in creating change.
+#### Linkmail eliminates this friction by providing a simple 3-click solution to help campaigns succeed in this uniquely constrained environment.
 
-### Project Details
+We also hope to encourage more people to become micro-campaigners with the intuitive, simple interface of [linkmail.co/create](https://linkmail.co/create). Political staffers put more weight on individual, unique emails. So thousands of people writing emails for dozens of their peers is more influential than dozens of organizations writing emails for thousands of their members.
+
+## Contribution Guidelines
 
 This project uses Vue 3 with typescript, tailwind CSS, Firebase Hosting and Cloud Firestore.
 
