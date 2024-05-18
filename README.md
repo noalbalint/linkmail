@@ -31,4 +31,5 @@ Thanks in advance for your help!
 
 #### To deploy (maintainers only):
 - npm run build
+- firebase staging (to test)
 - firebase deploy
