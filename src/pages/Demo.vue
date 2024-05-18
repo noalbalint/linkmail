@@ -10,11 +10,11 @@
         :src="video1"
         style="max-width: 200px;"
       />
-      <div class="pl-5 flex flex-col justify-between py-2">
+      <div class="pl-5 flex flex-col py-2">
         <span>
           Email campaigns on Instagram have too much cognitive load, resulting in abandoned emails. Users must:
         </span>
-        <ul class="pl-5 list-decimal">
+        <ul class="pl-5 list-decimal py-8">
           <li>Click link in account bio</li>
           <li>Copy body text</li>
           <li>Open mail app + paste / reformat</li>
@@ -28,9 +28,8 @@
           <li>Send! ... if they get that far</li>
         </ul>
         <span>
-          In the dopamine-saturated instant-gratification environment of Instagram, for most users this is too much, and
-          they abandon their email
-          without sending it :(
+          In the dopamine-saturated instant-gratification environment of Instagram, for most users this is simply too
+          much.
         </span>
       </div>
     </div>
@@ -70,7 +69,7 @@
       class="text-lg"
       minWidth="120px"
       type="primary"
-      label="Try Now"
+      label="Try It Now"
     />
   </RouterLink>
 </template>
