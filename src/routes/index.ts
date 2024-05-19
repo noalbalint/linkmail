@@ -3,6 +3,7 @@ import CreateVue from '../pages/Create.vue';
 import ConsumeVue from '../pages/Consume.vue';
 import HomeVue from '../pages/Home.vue';
 import DemoVue from '../pages/Demo.vue';
+import DonateVue from '../pages/Donate.vue';
 
 // TODO: code splitting
 
@@ -11,6 +12,7 @@ const routes = [
   { path: '/create', component: CreateVue },
   { path: '/consume', component: ConsumeVue, },
   { path: '/demo', component: DemoVue, },
+  { path: '/donate', component: DonateVue, },
 ]
 
 const router = createRouter({
