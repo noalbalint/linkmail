@@ -12,7 +12,10 @@
   </button>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 defineProps<{
   label?: string,
   minWidth?: string,

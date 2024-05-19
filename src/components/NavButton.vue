@@ -4,16 +4,19 @@
       :to="to"
       class="router-link"
     >
-      <slot>
-        <button>
+      <button>
+        <slot>
           {{ label }}
-        </button>
-      </slot>
+        </slot>
+      </button>
     </RouterLink>
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 defineProps<{
   to: string,
   label?: string,
@@ -23,7 +26,6 @@ defineProps<{
 <style scoped>
 .router-link {
   color: unset;
-  font-size: 14px;
   margin: 0 0.5rem;
 }
 

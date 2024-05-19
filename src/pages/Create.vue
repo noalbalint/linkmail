@@ -14,13 +14,16 @@
         @click="createNewLinkmail()"
       />
 
-      <LoadingSpinner v-else-if="linkLoading"/>
+      <LoadingSpinner v-else-if="linkLoading" />
 
-      <div v-else-if="linkCreated" class="flex items-center">
+      <div
+        v-else-if="linkCreated"
+        class="flex items-center"
+      >
         <a
           :href="linkmailCode"
           target="_blank"
-          class="underline text-lg"
+          class="underline"
         >{{ linkmailCode }}</a>
         <Button
           type="secondary"
@@ -41,7 +44,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 // TODO: @ alias; avoid relative imports
 import DraftEmail from '../components/DraftEmail.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue';

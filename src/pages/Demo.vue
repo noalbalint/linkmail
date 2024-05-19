@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-2xl">
 
-    <p class="text-2xl underline text-center pb-8 pt-6"> The Problem: </p>
+    <p class="text-xl underline text-center pb-8 pt-6"> The Problem: </p>
 
     <div class="flex">
       <video
@@ -22,9 +22,9 @@
           <li>Copy subject</li>
           <li>Switch to mail app + paste</li>
           <li>Switch to Instagram</li>
-          <li>Copy “to” and “cc” address(es)</li>
+          <li>Copy recipient email address(es)</li>
           <li>Switch to mail app + paste</li>
-          <li>[repeat as necessary]</li>
+          <li>[[ Repeat as necessary ]]</li>
           <li>Send! ... if they get that far</li>
         </ul>
         <span>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <p class="text-2xl underline text-center py-8"> The Solution: </p>
+    <p class="text-xl underline text-center py-8"> The Solution: </p>
 
     <div class="flex">
       <video
@@ -45,17 +45,22 @@
       />
       <div class="pl-5 flex flex-col py-2">
         <span>
-          Linkmail vastly simplifies this flow by compressing more information into the initial link the the user
-          clicks. Now all they have to do is:
+          Linkmail vastly simplifies this flow by compressing more information into the link being shared.
+          Now all users have to do is:
         </span>
         <ul class="pl-5 py-4 list-decimal">
-          <li>Click link in account bio</li>
+          <li>Click link</li>
           <li>Add name</li>
           <li>Send!</li>
 
         </ul>
         <span>
-          This makes all the difference: when it's easier to take action, more people do!
+          This makes all the difference – when it's easier to take action, more people do!
+        </span>
+        <div class="h-full" />
+        <span>
+          NOTE: in both demos, you'll see that I must slightly reformatt the email content. This is due to a
+          problem with my phone specifically, and most users won't experience this.
         </span>
       </div>
     </div>
@@ -66,7 +71,6 @@
     class="mt-8 mb-12"
   >
     <Button
-      class="text-lg"
       minWidth="120px"
       type="primary"
       label="Try It Now"

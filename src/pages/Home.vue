@@ -1,15 +1,15 @@
 <template>
   <div class="flex items-center justify-center grow flex-col">
-    <span class="hero text-6xl md:text-8xl">
+    <span class="hero text-6xl md:text-7xl">
       The New Email Templating Engine
     </span>
-    <span class="subtitle leading-6 md:text-2xl text-lg py-12">
-      Replace Your link-in-bio GoogleDoc With A One-Click Magic Link
+    <span class="pb-12 pt-6">
+      Replace your janky forms with a one-click magic link
     </span>
     <div>
       <RouterLink to="/demo">
         <Button
-          class="mr-8 text-lg"
+          class="mr-8"
           minWidth="120px"
           type="primary"
           label="Learn More"
@@ -17,7 +17,6 @@
       </RouterLink>
       <RouterLink to="/create">
         <Button
-          class="text-lg"
           minWidth="120px"
           type="primary"
           label="Try Now"
