@@ -4,7 +4,7 @@
       The New Email Templating Engine
     </span>
     <span class="pb-12 pt-6">
-      Replace your janky forms with a one-click magic link
+      Replace cumbersome forms with a one-click magic link
     </span>
     <div>
       <RouterLink to="/demo">
