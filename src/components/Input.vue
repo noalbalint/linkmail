@@ -4,16 +4,21 @@
     <input
       type="text"
       @input="onInput"
-      class="outline-none w-full pl-2 opacity-100"
+      class="outline-none w-full opacity-100"
+      :class="customClass"
       :placeholder="placeholder"
     />
   </label>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 defineProps<{
   label?: string,
   placeholder?: string,
+  customClass?: string,
 }>()
 
 const emit = defineEmits<{

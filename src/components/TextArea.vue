@@ -3,6 +3,7 @@
     <label class="flex flex-grow">
       <span>{{ label }}</span>
       <textarea
+        :class="customClass"
         class="h-auto"
         @input="onInput"
         :placeholder="placeholder"
@@ -11,10 +12,14 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 defineProps<{
   label: string,
   placeholder?: string,
+  customClass?: string,
 }>()
 
 const emit = defineEmits<{
@@ -32,10 +37,9 @@ function onInput(event: Event): void {
 }
 </script>
 
-<style scoped> 
+<style scoped>
 textarea {
   outline: none;
-  margin-left: 0.5rem;
   width: 100%;
 }
 </style>

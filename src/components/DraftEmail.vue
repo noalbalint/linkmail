@@ -6,6 +6,7 @@
         label="To:"
         placeholder="example@gmail.com"
         v-model="toInput"
+        customClass="ml-[46px]"
       />
       <Button
         class="mr-2 mt-2 text-sm"
@@ -28,18 +29,23 @@
     <TextArea
       v-if="showCc"
       label="Cc:"
+      placeholder="cc addresses"
+      customClass="ml-11"
       v-model="ccInput"
     />
 
     <TextArea
       v-if="showBcc"
       label="Bcc:"
+      placeholder="bcc addresses"
+      customClass="ml-9"
       v-model="bccInput"
     />
 
     <Input
       label="Subject:"
-      placeholder="Made with linkmail.co"
+      placeholder="[no subject]"
+      customClass="ml-2"
       v-model="subjectInput"
     />
 
@@ -47,14 +53,18 @@
 
     <TextArea
       label="Body:"
-      placeholder="Write your compelling email here!"
+      placeholder="Dear representitive ..."
+      customClass="ml-[26px]"
       class="flex-grow"
       v-model="bodyInput"
     />
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
 import Button from './Button.vue'
