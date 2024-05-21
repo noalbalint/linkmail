@@ -3,7 +3,7 @@
     <span class="hero text-6xl md:text-7xl">
       The New Email Templating Engine
     </span>
-    <span class="pb-12 pt-6">
+    <span class="pb-12 pt-6 text-lg">
       Replace cumbersome forms with a one-click magic link
     </span>
     <div>
