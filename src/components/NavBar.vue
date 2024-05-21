@@ -25,7 +25,6 @@
       v-else
       class="flex align-center"
     >
-      <!-- TODO: why is this not working? moving ID breaks the button styling, and still not opening the menu -->
       <Button>
         <img
           id="nav-menu__activator"
@@ -60,14 +59,19 @@
         </template>
       </Menu>
     </section>
+    <!-- NOTE: hidden while in beta -->
     <NavButton
+      v-if="false"
       to="/donate"
       label="❤️ Donate"
     />
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 import favicon from '../assets/favicon.svg';
 import NavButton from './NavButton.vue';
 import Button from './Button.vue'
