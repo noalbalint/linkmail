@@ -1,18 +1,22 @@
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen">
-    <span class="text-2xl pb-4"> {{ linkValidButNoEmailApp ? 'No email app found!' : 'Opening default email app...' }} </span>
+    <span class="text-2xl pb-4"> {{ linkValidButNoEmailApp ? 'No email app found!' : 'Opening default email app...' }}
+    </span>
     <span> {{ errorMessage }} </span>
   </div>
 </template>
 
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 import { ref, computed } from 'vue';
 import { db } from '../../firebase.ts'
 import { doc, getDoc } from "firebase/firestore";
 
 setTimeout(() => {
   timeoutComplete.value = true;
-}, 5000);
+}, 10000);
 
 let timeoutComplete = ref(false);
 let emailNotFound = ref(false);
