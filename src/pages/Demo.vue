@@ -1,9 +1,9 @@
 <template>
   <div class="max-w-2xl">
 
-    <p class="text-xl underline text-center pb-8 pt-6"> The Problem: </p>
+    <p class="text-xl underline text-center pb-4 lg:pb-8 pt-6"> The Problem: </p>
 
-    <div class="flex">
+    <div class="flex flex-col-reverse items-center lg:flex-row">
       <video
         controls
         type="video/MP4"
@@ -27,16 +27,16 @@
           <li>[[ Repeat as necessary ]]</li>
           <li>Send! ... if they get that far</li>
         </ul>
-        <span>
+        <span class="pb-4 lg:pb-0">
           In the dopamine-saturated instant-gratification environment of Instagram, for most users this is simply too
           much.
         </span>
       </div>
     </div>
 
-    <p class="text-xl underline text-center py-8"> The Solution: </p>
+    <p class="text-xl underline text-center pb-4 lg:pb-8 pt-6">The Solution: </p>
 
-    <div class="flex">
+    <div class="flex flex-col-reverse items-center lg:flex-row">
       <video
         controls
         type="video/MP4"
@@ -52,13 +52,13 @@
           <li>Click link</li>
           <li>Add name</li>
           <li>Send!</li>
-
         </ul>
         <span>
           This makes all the difference – when it's easier to take action, more people do!
         </span>
+        <br>
         <div class="h-full" />
-        <span>
+        <span class="pb-4 lg:pb-0">
           NOTE: in both demos, you'll see that I must slightly reformatt the email content. This is due to a
           problem with my phone specifically, and most users won't experience this.
         </span>

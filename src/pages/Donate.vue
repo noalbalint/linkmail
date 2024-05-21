@@ -1,6 +1,6 @@
 <template>
-  <section class="flex asdfasf">
-    <div class="max-w-lg pr-12">
+  <section class="lg:flex">
+    <div class="max-w-lg lg:pr-12">
       We couldn't do this without you!
       <br>
       <br>
@@ -22,20 +22,12 @@
       and we will find a solution.
       <br>
       <br>
-      <span>Thank you <3 </span>
+      <span>Thank you! </span>
+      <br>
+      <br>
     </div>
 
-    <div class="asdffda">
-      <span class="underline"> PayPal: </span>
-      <br>
-      <a href="https://wwwpaypal.me/noalbalint">www.paypal.me/noalbalint</a>
-      <br>
-      <img
-        :src="paypalQR"
-        alt="paypal code"
-        class="w-48"
-      >
-      <br>
+    <div>
       <span class="underline"> Canadian e-transfer: </span>
       <br>
       Name: Noal Balint
@@ -50,6 +42,15 @@
       IBAN: DE65 1001 1001 2622 2439 73
       <br>
       <br>
+      <span class="underline"> PayPal: </span>
+      <br>
+      <a href="https://wwwpaypal.me/noalbalint">www.paypal.me/noalbalint</a>
+      <br>
+      <img
+        :src="paypalQR"
+        alt="paypal code"
+        class="w-48"
+      >
     </div>
   </section>
 </template>
