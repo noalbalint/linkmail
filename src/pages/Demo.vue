@@ -6,6 +6,7 @@
     <div class="flex flex-col-reverse items-center lg:flex-row">
       <video
         controls
+        preload="auto"
         type="video/MP4"
         :src="video1"
         style="max-width: 200px;"
@@ -39,6 +40,7 @@
     <div class="flex flex-col-reverse items-center lg:flex-row">
       <video
         controls
+        preload="auto"
         type="video/MP4"
         :src="video2"
         style="max-width: 200px;"
