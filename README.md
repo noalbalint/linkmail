@@ -19,6 +19,7 @@ We also hope to encourage more people to become micro-campaigners with the intui
 Main features currently planned/in progress:
 
 - (very major) automatically find the email of responsible elected official based on a street address
+- (major) campaign management: see how many people interacted with your campaign, their location, etc
 - (minor) integrate location services to determine street address with one click
 - (minor) dark mode
 
