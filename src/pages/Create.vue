@@ -1,7 +1,13 @@
 <template>
-  <div class="max-w-5xl lg:pt-12 w-full flex flex-col items-center">
+  <div class="max-w-4xl w-full flex flex-col items-center">
+    <ul class="list-decimal pb-4 pl-2">
+      <p class="underline text-left">How to use the Linkmail templating engine:</p>
+      <li>Write an email as if you were about to send it</li>
+      <li>Use 'create link' to generate a unique, sharable link</li>
+      <li>Click the link once to test it, then share it with your audience!</li>
+    </ul>
     <DraftEmail
-      class="mb-6 lg:mt-16"
+      class="mb-6"
       v-model="mailtoLink"
     />
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-bar px-2 md:px-16">
+  <div class="nav-bar px-2 lg:px-16">
     <!-- Left side menu -->
     <section v-if="isLargeScreen">
       <div class="flex items-center">
