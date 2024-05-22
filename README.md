@@ -14,6 +14,14 @@ Unfortunately, the dopamine-rich social media landscape of social media is extre
 
 We also hope to encourage more people to become micro-campaigners with the intuitive, simple interface of [linkmail.co/create](https://linkmail.co/create). Political staffers put more weight on individual, unique emails. So thousands of people writing emails for dozens of their peers is more influential than dozens of organizations writing emails for thousands of their members.
 
+## Product Roadmap
+
+Main features currently planned/in progress:
+
+- (very major) automatically find the email of responsible elected official based on a street address
+- (minor) integrate location services to determine street address with one click
+- (minor) dark mode
+
 ## Contribution Guidelines
 
 This project uses Vue 3 with typescript, tailwind CSS, Firebase Hosting and Cloud Firestore.
