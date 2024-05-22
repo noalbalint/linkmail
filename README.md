@@ -1,4 +1,4 @@
-## Project Outline
+## Project Background
 
 In the USA and Canada, creating an email campaign for a political topic is a great way to bring it to lawmakers' attention. These emails are collected, categorized, and reported by office staff daily, and if a lawmaker is not completely corrupt, this will influence their position on the topic.
 
