@@ -24,17 +24,16 @@
 
       <div
         v-else-if="linkCreated"
-        class="flex items-center"
+        class="flex items-center flex-col lg:flex-row"
       >
         <a
           :href="linkmailCode"
           target="_blank"
-          class="underline"
         >{{ linkmailCode }}</a>
         <Button
           type="secondary"
           minWidth="100px"
-          class="ml-4"
+          class="ml-4 mt-2 lg:mt-0"
           @click="copyLinkToClipboard()"
         >
           <div class="flex justify-center">
@@ -91,7 +90,7 @@ async function copyLinkToClipboard() {
 
 <style scoped>
 a {
-  max-width: 100%;
+  max-width: 90vw;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
