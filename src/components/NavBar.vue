@@ -1,5 +1,6 @@
 <template>
   <div class="nav-bar px-2 md:px-16">
+    <!-- Left side menu -->
     <section v-if="isLargeScreen">
       <div class="flex items-center">
         <NavButton
@@ -12,15 +13,17 @@
           />
         </NavButton>
         <NavButton
-          to="/create"
-          label="Create"
+          to="/"
+          label="Home"
         />
         <NavButton
-          to="/demo"
-          label="How does it work?"
+          to="/create"
+          label="New Template"
         />
       </div>
     </section>
+
+    <!-- Mobile menu -->
     <section
       v-else
       class="flex align-center"
@@ -37,11 +40,13 @@
       >
         <template v-slot="{ closeMenu }">
           <div class="nav-menu-content">
+            <!-- Logo -->
             <RouterLink to="/">
               <Button @click="closeMenu">
                 Home
               </Button>
             </RouterLink>
+            <!-- Create -->
             <RouterLink
               to="/create"
               @click="closeMenu"
@@ -50,6 +55,7 @@
                 Create
               </Button>
             </RouterLink>
+            <!-- Info -->
             <RouterLink to="/demo">
               <Button @click="closeMenu">
                 How does it work?
@@ -59,12 +65,20 @@
         </template>
       </Menu>
     </section>
+
+    <!-- Right side menu -->
     <!-- NOTE: hidden while in beta -->
-    <NavButton
-      v-if="false"
-      to="/donate"
-      label="❤️ Donate"
-    />
+    <section>
+      <NavButton
+        to="/demo"
+        label="What is Linkmail?"
+      />
+      <NavButton
+        v-if="false"
+        to="/donate"
+        label="❤️ Donate"
+      />
+    </section>
   </div>
 </template>
 
