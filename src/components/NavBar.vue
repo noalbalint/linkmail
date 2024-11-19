@@ -3,7 +3,7 @@
     <!-- Left side menu -->
     <section v-if="isLargeScreen">
       <div class="flex items-center">
-        <NavButton
+        <RouterLink
           to="/"
           class="pr-4"
         >
@@ -11,7 +11,7 @@
             :src="favicon"
             class="max-h-8"
           />
-        </NavButton>
+        </RouterLink>
         <NavButton
           to="/"
           label="Home"
@@ -98,7 +98,7 @@ const isLargeScreen = window.matchMedia('(min-width: 600px)').matches;
 
 <style scoped>
 .nav-bar {
-  height: 3rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;  
