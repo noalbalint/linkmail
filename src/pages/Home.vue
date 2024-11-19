@@ -4,7 +4,7 @@
       grassroots digital action
     </span>
     <span class="pb-4 pt-3 text-lg">
-      quickly draft and share emails
+      quickly draft sharable emails
     </span>
     <div>
       <RouterLink to="/demo">
