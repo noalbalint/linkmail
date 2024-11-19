@@ -93,7 +93,7 @@
     <Button
       minWidth="120px"
       type="primary"
-      label="Try It Now"
+      label="Try It"
     />
   </RouterLink>
 </template>

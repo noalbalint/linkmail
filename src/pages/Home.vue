@@ -1,10 +1,10 @@
 <template>
   <div class="flex items-center justify-center grow flex-col">
     <span class="hero text-6xl md:text-7xl">
-      The New Email Templating Engine
+      grassroots digital action
     </span>
-    <span class="pb-12 pt-6 text-lg">
-      Replace cumbersome forms with a one-click magic link
+    <span class="pb-4 pt-3 text-lg">
+      quickly draft and share emails
     </span>
     <div>
       <RouterLink to="/demo">
@@ -19,7 +19,7 @@
         <Button
           minWidth="120px"
           type="primary"
-          label="Try Now"
+          label="Try It"
         />
       </RouterLink>
     </div>

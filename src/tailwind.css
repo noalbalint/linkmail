@@ -750,16 +750,12 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
 }
 
 .pl-5 {
@@ -774,12 +770,12 @@ video {
   padding-right: 1rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
-.pb-2 {
-  padding-bottom: 0.5rem;
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-left {
@@ -839,11 +835,16 @@ video {
   font-style: normal;
 }
 
+button {
+  letter-spacing: unset;
+}
+
 :root {
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
+  letter-spacing: 0.1ch;
   color-scheme: light;
   color: #213547;
   background-color: #ffffff;

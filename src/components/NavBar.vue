@@ -18,7 +18,7 @@
         />
         <NavButton
           to="/create"
-          label="New Template"
+          label="New Email"
         />
       </div>
     </section>
@@ -71,7 +71,7 @@
     <section>
       <NavButton
         to="/demo"
-        label="What is Linkmail?"
+        label="What's the point?"
       />
       <NavButton
         v-if="false"

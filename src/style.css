@@ -9,11 +9,16 @@
   font-style: normal;
 }
 
+button {
+  letter-spacing: unset;
+}
+
 :root {
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
+  letter-spacing: 0.1ch;
 
   color-scheme: light;
   color: #213547;
