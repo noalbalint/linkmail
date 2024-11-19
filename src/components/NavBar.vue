@@ -71,7 +71,7 @@
     <section>
       <NavButton
         to="/demo"
-        label="What's the point?"
+        label="What is this?"
       />
       <NavButton
         v-if="false"
@@ -103,7 +103,7 @@ const isLargeScreen = window.matchMedia('(min-width: 600px)').matches;
   justify-content: space-between;
   align-items: center;  
   width: 100vw;
-  background-color: #e8e4d4;
+  background-color: #8fbc8f;
   position: sticky;
   top: 0;
 }
@@ -124,6 +124,6 @@ const isLargeScreen = window.matchMedia('(min-width: 600px)').matches;
 }
 
 #nav-menu__activator:hover {
-  background-color: #cecbbeb4;
+  background-color: #8fbc8f;
 }
 </style>
