@@ -1,10 +1,6 @@
 <template>
   <button
     :style="`min-width: ${minWidth};`"
-    :class="{
-      'primary': type === 'primary',
-      'secondary': type === 'secondary',
-    }"
   >
     <slot>
       {{ label }}
@@ -29,25 +25,13 @@ button {
   border: none;
   padding: 0.5rem;
   border-radius: 8px;
+  background-color: #8fbc8f;
+  color: black;
 }
 
-button.primary {
-  background-color: #4713f3;
-  color: white;
-}
-
-button.primary:hover {
+button:hover {
   outline: none;
-  background-color: #4713f3bb;
-}
-
-button.secondary {
-  background-color: none;
-}
-
-button.secondary:hover {
-  outline: none;
-  background-color: #e6e0d1;
+  background-color: #8fbc8fbb; 
 }
 
 button:active {

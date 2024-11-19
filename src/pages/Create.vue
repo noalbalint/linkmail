@@ -27,7 +27,6 @@
           target="_blank"
         >{{ linkmailCode }}</a>
         <Button
-          type="secondary"
           minWidth="100px"
           class="ml-4 mt-2 lg:mt-0"
           @click="copyLinkToClipboard()"
