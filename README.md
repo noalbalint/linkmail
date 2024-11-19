@@ -35,8 +35,11 @@ Thanks in advance for your help!
 
 
 ### Quickstart: 
-- npm run dev
-- npx tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch // necessary for compiling tailwind styles
+from root of this repo, in separate terminals, run:
+- `npm run dev` 
+this will start the development server and send live updates to http://localhost:5173/ 
+- `npx tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch`
+this will tell tailwind to watch for new classes and add necessary css to the style sheets
 
 #### To deploy (maintainers only):
 - npm run build
