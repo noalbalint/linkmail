@@ -59,7 +59,7 @@
           :src="favicon"
           class="max-h-8 pr-2"
         />
-        <span>
+        <span class=" cursor-default">
           linkmail.co
         </span>
       </section>
