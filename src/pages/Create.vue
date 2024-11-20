@@ -1,7 +1,5 @@
 <template>
   <div class="max-w-4xl w-full flex flex-col items-center">
-    <p class="pb-2 pt-6">Get started by drafting your email here just like you normally would. Then click 'create link',
-      copy it, and share! It's that easy :)</p>
     <DraftEmail
       class="mb-6"
       v-model="mailtoLink"

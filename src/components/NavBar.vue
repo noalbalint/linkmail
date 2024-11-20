@@ -1,91 +1,87 @@
 <template>
-  <div class="nav-bar px-2 lg:px-16">
-    <!-- Left side menu -->
-    <section v-if="isLargeScreen">
-      <div class="flex items-center">
-        <RouterLink
-          to="/"
-          class="pr-4"
-        >
-          <img
-            :src="favicon"
-            class="max-h-8"
+  <div class="nav-bar px-2 lg:px-16 flex justify-center">
+    <div class="flex items-center justify-between max-w-4xl w-full px-16">
+      <!-- Left side menu -->
+      <section v-if="isLargeScreen">
+        <div class="flex items-center">
+          <NavButton
+            to="/"
+            label="new email"
           />
-        </RouterLink>
-        <NavButton
-          to="/"
-          label="Home"
-        />
-        <NavButton
-          to="/create"
-          label="New Email"
-        />
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <!-- Mobile menu -->
-    <section
-      v-else
-      class="flex align-center"
-    >
-      <Button>
-        <img
-          id="nav-menu__activator"
-          :src="menu"
-        />
-      </Button>
-      <Menu
-        activator="nav-menu__activator"
-        class="nav-menu"
+      <!-- Mobile menu -->
+      <section
+        v-else
+        class="flex align-center"
       >
-        <template v-slot="{ closeMenu }">
-          <div class="nav-menu-content">
-            <!-- Logo -->
-            <RouterLink to="/">
-              <Button @click="closeMenu">
-                Home
-              </Button>
-            </RouterLink>
-            <!-- Create -->
-            <RouterLink
-              to="/create"
-              @click="closeMenu"
-            >
-              <Button @click="closeMenu">
-                Create
-              </Button>
-            </RouterLink>
-            <!-- Info -->
-            <RouterLink to="/demo">
-              <Button @click="closeMenu">
-                How does it work?
-              </Button>
-            </RouterLink>
-          </div>
-        </template>
-      </Menu>
-    </section>
+        <Button>
+          <img
+            id="nav-menu__activator"
+            :src="menu"
+          />
+        </Button>
+        <Menu
+          activator="nav-menu__activator"
+          class="nav-menu"
+        >
+          <template v-slot="{ closeMenu }">
+            <div class="nav-menu-content">
+              <!-- Logo -->
+              <RouterLink to="/">
+                <Button @click="closeMenu">
+                  Home
+                </Button>
+              </RouterLink>
+              <!-- Create -->
+              <RouterLink
+                to="/create"
+                @click="closeMenu"
+              >
+                <Button @click="closeMenu">
+                  Create
+                </Button>
+              </RouterLink>
+              <!-- Info -->
+              <RouterLink to="/demo">
+                <Button @click="closeMenu">
+                  How does it work?
+                </Button>
+              </RouterLink>
+            </div>
+          </template>
+        </Menu>
+      </section>
 
-    <!-- Right side menu -->
-    <!-- NOTE: hidden while in beta -->
-    <section>
-      <NavButton
-        to="/demo"
-        label="What is this?"
-      />
-      <NavButton
-        v-if="false"
-        to="/donate"
-        label="❤️ Donate"
-      />
-    </section>
+      <section class="logo flex items-center">
+        <img
+          :src="favicon"
+          class="max-h-8 pr-2"
+        />
+        <span>
+          linkmail.co
+        </span>
+      </section>
+
+      <!-- Right side menu -->
+      <section>
+        <NavButton
+          to="/demo"
+          label="about"
+        />
+        <!-- donate hidden for now -->
+        <NavButton
+          v-if="false"
+          to="/donate"
+          label="❤️ Donate"
+        />
+      </section>
+    </div>
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import favicon from '../assets/favicon.svg';
 import NavButton from './NavButton.vue';
 import Button from './Button.vue'
@@ -99,13 +95,16 @@ const isLargeScreen = window.matchMedia('(min-width: 600px)').matches;
 <style scoped>
 .nav-bar {
   height: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;  
   width: 100vw;
   background-color: #8fbc8f;
   position: sticky;
   top: 0;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-menu {

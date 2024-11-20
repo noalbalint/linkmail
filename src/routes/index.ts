@@ -9,7 +9,6 @@ import DonateVue from '../pages/Donate.vue';
 
 const routes = [
   { path: '/', component: HomeVue },
-  { path: '/create', component: CreateVue },
   { path: '/consume', component: ConsumeVue, },
   { path: '/demo', component: DemoVue, },
   { path: '/donate', component: DonateVue, },

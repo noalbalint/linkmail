@@ -4,33 +4,19 @@
       grassroots digital action
     </span>
     <span class="pb-4 pt-3 text-lg">
-      quickly draft sharable emails
+      write, link, share, repeat
     </span>
     <div>
-      <RouterLink to="/demo">
-        <Button
-          class="mr-8"
-          minWidth="120px"
-          type="primary"
-          label="Learn More"
-        />
-      </RouterLink>
-      <RouterLink to="/create">
-        <Button
-          minWidth="120px"
-          type="primary"
-          label="Try It"
-        />
-      </RouterLink>
     </div>
+    <Create />
   </div>
 </template>
 
 <script
-  setup
-  lang="ts"
+setup
+lang="ts"
 >
-import Button from '../components/Button.vue';
+import Create from './Create.vue';
 </script>
 
 <style scoped>
