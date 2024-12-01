@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-2xl">
+  <div class="max-w-3xl">
 
     <p class="mt-6 px-5 lg:px-0"> Linkmail is an <a
         target="_blank"
@@ -98,10 +98,7 @@
   </RouterLink>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import Button from '../components/Button.vue';
 import video1 from '../assets/videos/video1.MP4'
 import video2 from '../assets/videos/video2.MP4'

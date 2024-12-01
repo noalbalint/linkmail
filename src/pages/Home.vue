@@ -4,7 +4,7 @@
       grassroots digital action
     </span>
     <span class="pb-4 pt-3 text-lg">
-      write, link, share, repeat
+      write, link, share: multiply your impact
     </span>
     <div>
     </div>
@@ -12,10 +12,7 @@
   </div>
 </template>
 
-<script
-setup
-lang="ts"
->
+<script setup lang="ts">
 import Create from './Create.vue';
 </script>
 

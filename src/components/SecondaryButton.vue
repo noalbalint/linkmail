@@ -1,33 +1,12 @@
 <template>
-  <div>
-    <RouterLink
-      :to="to"
-      class="router-link"
-    >
-      <SecondaryButton>
-        <slot>
-          {{ label }}
-        </slot>
-      </SecondaryButton>
-    </RouterLink>
-  </div>
+  <button>
+    <slot> </slot>
+  </button>
 </template>
 
-<script setup lang="ts">
-import SecondaryButton from './SecondaryButton.vue';
-
-defineProps<{
-  to: string,
-  label?: string,
-}>()
-</script>
+<script setup lang="ts" />
 
 <style scoped>
-.router-link {
-  color: unset;
-  margin: 0 0.5rem;
-}
-
 button {
   outline: none;
   border: none;
