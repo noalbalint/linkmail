@@ -62,10 +62,7 @@
       />
       <div class="pl-5 flex flex-col py-2 h-full">
         <span>
-          <a
-            href="linkmail.co/create"
-            target="_blank"
-          >Linkmail</a> vastly simplifies this by compressing more information into the link being shared.
+          Linkmail vastly simplifies this by compressing more information into the link being shared.
           The new flow is:
         </span>
         <ul class="pl-5 py-4 list-decimal">
@@ -87,7 +84,7 @@
   </div>
 
   <RouterLink
-    to="/create"
+    to="/"
     class="mt-8 mb-12"
   >
     <Button
