@@ -1,24 +1,28 @@
 <template>
   <div class="max-w-3xl">
 
-    <p class="mt-6 px-5 lg:px-0"> Linkmail is an <a
+    <div class="mt-6"></div>
+    In the dopamine-saturated social media landscape of instant gratification, user will complete only the most simple
+    of tasks.
+    <br>
+    <br>
+    <p class="px-5 lg:px-0"> Linkmail is an <a
         target="_blank"
         href="https://github.com/noalbalint/linkmail"
-      >opensource project</a> for accelerating sociopolitical movements. It creates a double efficiency: enabling
-      activists to more easily write and share email templates, and enabling audiences to more easily send them.
+      >opensource project</a> for accelerating change. It is doing for email campaigns what ApplePay
+      did for online purchases: reduce friction to increase follow through.
       <br>
       <br>
-      Our service is particularly useful for social media activists who don't have the capacity/budget for
+      The service is designed for grassroots social media campaigners who don't have the capacity/budget for
       a website, let alone a dedicated email engine like <a
         href="https://www.newmode.net/home"
         target="_blank"
-      >newmode</a>. However, larger organizations will also benefit from our low-friction technology.
+      >newmode</a>. However, larger organizations will also benefit from the low-friction technology.
       <br>
       <br>
-      We also hope to encourage more people to become micro-campaigners.
-      Political offices put more weight on individual/unique emails, so <b> a large number
-        of individuals writing emails for their peers is more influential than a handful of NGOs writing emails
-        for thousands of members. </b> This is our vision for Linkmail.
+      Offices generally give more weight to unique emails, so <b> a large number
+        of individuals writing for their peers is more influential than a handful of NGOs writing
+        for thousands of members. </b> This is the vision for Linkmail.
     </p>
 
     <section class="flex flex-col-reverse items-center lg:flex-row pt-6">
@@ -31,7 +35,7 @@
       />
       <div class="pl-5 flex flex-col py-2">
         <span>
-          The current flow for a standard social media email drive is some derivative of the following:
+          The current flow for a standard social media email campaign is:
         </span>
         <ul class="pl-5 list-decimal py-8">
           <li>Click link in account bio</li>
@@ -46,8 +50,7 @@
           <li>[[ Repeat as necessary ]]</li>
         </ul>
         <span class="pb-4 lg:pb-0">
-          In the dopamine-saturated instant-gratification environment of Instagram, for most users this is simply too
-          many steps and they abandon their message without sending it.
+          With so many steps, many users will abandon their message without sending it.
         </span>
       </div>
     </section>
