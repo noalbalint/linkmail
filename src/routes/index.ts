@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ConsumeVue from '../pages/Consume.vue';
 import HomeVue from '../pages/Home.vue';
-import DemoVue from '../pages/Demo.vue';
+import AboutVue from '../pages/About.vue';
 import DonateVue from '../pages/Donate.vue';
 
 // TODO: code splitting
@@ -9,7 +9,7 @@ import DonateVue from '../pages/Donate.vue';
 const routes = [
   { path: '/', component: HomeVue },
   { path: '/consume', component: ConsumeVue, },
-  { path: '/demo', component: DemoVue, },
+  { path: '/about', component: AboutVue, },
   { path: '/donate', component: DonateVue, },
 ]
 

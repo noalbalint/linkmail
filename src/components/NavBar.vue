@@ -39,7 +39,7 @@
         <!-- about -->
         <section>
           <NavButton
-            to="/demo"
+            to="/about"
             label="about"
           />
           <!-- donate hidden for now -->
