@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-full min-h-screen flex-col items-center">
     <NavBar />
-    <router-view class="p-4 max-w-7xl" />
+    <router-view class="p-4 max-w-7xl w-full" />
     <span class="beta-banner">beta preview - <a
         target="_blank"
         href="https://linkmail.co/consume?mailcode=6x4ChBKrQ9pXzcVudSQe"
@@ -10,10 +10,7 @@
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import NavBar from './components/NavBar.vue';
 </script>
 

@@ -9,21 +9,16 @@
         >
           <img
             :src="favicon"
-            class="max-h-8 pr-2"
+            class="max-h-8"
           />
         </a>
-        <SecondaryButton
+        <NavButton
           v-if="isLargeScreen"
           to="/"
           label="linkmail.co"
         >
-          <a
-            href="https://github.com/noalbalint/linkmail"
-            target="_blank"
-          >
-            linkmail.co
-          </a>
-        </SecondaryButton>
+          linkmail.co
+        </NavButton>
       </section>
 
       <section class="flex">
@@ -57,7 +52,6 @@
 <script setup lang="ts">
 import favicon from '../assets/favicon.svg';
 import NavButton from './NavButton.vue';
-import SecondaryButton from './SecondaryButton.vue';
 
 const isLargeScreen = window.matchMedia('(min-width: 600px)').matches;
 

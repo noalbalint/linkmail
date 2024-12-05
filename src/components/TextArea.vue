@@ -1,23 +1,19 @@
 <template>
   <div class="flex flex-col p-2">
     <label class="flex flex-grow">
-      <span>{{ label }}</span>
       <textarea
         :class="customClass"
-        class="h-auto"
+        class="min-h-52 p-1 border-solid border-[1px] rounded border-grey-500
+        max-w-2xl mx-3"
         @input="onInput"
         :placeholder="placeholder"
-      />
+      ></textarea>
     </label>
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 defineProps<{
-  label: string,
   placeholder?: string,
   customClass?: string,
 }>()

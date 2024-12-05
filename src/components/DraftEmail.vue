@@ -1,68 +1,61 @@
 <template>
   <!-- TODO: find a formatter that will newline wrap classes like attributes -->
-  <div class="draft-email w-full shadow-md border-solid border-black border-2 text-left min-h-[60vh] flex flex-col">
-    <section class="flex items-center">
+  <div
+    class="draft-email max-w-3xl w-full shadow-md border-solid rounded-lg pt-4 border-black border-2 text-left min-h-[60vh] flex flex-col"
+  >
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> To </span>
       <Input
-        label="To:"
-        placeholder="example@gmail.com"
         v-model="toInput"
-        customClass="ml-[46px]"
-      />
-      <Button
-        class="mr-2 mt-2 text-sm"
-        minWidth="48px"
-        label="Cc:"
-        tabindex="-1"
-        @click="showCc = !showCc"
-      />
-      <Button
-        class="mr-2 mt-2 text-sm"
-        minWidth="48px"
-        label="Bcc:"
-        tabindex="-1"
-        @click="showBcc = !showBcc"
+        class="flex-grow"
       />
     </section>
 
-    <TextArea
-      v-if="showCc"
-      label="Cc:"
-      placeholder="cc addresses"
-      customClass="ml-11"
-      v-model="ccInput"
-    />
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> ReplyTo </span>
+      <Input
+        v-model="replyToInput"
+        class="flex-grow"
+      />
+    </section>
 
-    <TextArea
-      v-if="showBcc"
-      label="Bcc:"
-      placeholder="bcc addresses"
-      customClass="ml-9"
-      v-model="bccInput"
-    />
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> Cc </span>
+      <Input
+        v-model="ccInput"
+        class="flex-grow"
+      />
+    </section>
 
-    <Input
-      label="Subject:"
-      placeholder="[no subject]"
-      customClass="ml-2"
-      v-model="subjectInput"
-    />
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> Bcc </span>
+      <Input
+        v-model="bccInput"
+        class="flex-grow"
+      />
+    </section>
+
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> Subject </span>
+      <Input
+        v-model="subjectInput"
+        class="flex-grow"
+      />
+    </section>
 
     <hr>
 
-    <TextArea
-      label="Body:"
-      placeholder="Dear representitive ..."
-      customClass="ml-[26px]"
-      class="flex-grow"
-      v-model="bodyInput"
-    />
+    <section class="flex m-1">
+      <span class="pl-2 pt-3 w-16"> Body </span>
+      <TextArea
+        class="flex-grow"
+        v-model="bodyInput"
+      ></TextArea>
+    </section>
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
 import Button from './Button.vue'
@@ -108,8 +101,8 @@ watchEffect(() => {
 
   return link;
 });
-
 </script>
+
 <style>
 .draft-email {
   background-color: white;
