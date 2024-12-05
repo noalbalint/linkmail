@@ -43,7 +43,7 @@
       />
     </section>
 
-    <hr>
+    <hr class="mt-2 mb-1">
 
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Body </span>
