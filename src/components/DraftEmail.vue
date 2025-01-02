@@ -5,7 +5,7 @@
   >
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> To </span>
-      <Input
+      <ChipsInput
         v-model="toInput"
         class="flex-grow"
       />
@@ -13,7 +13,7 @@
 
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> ReplyTo </span>
-      <Input
+      <ChipsInput
         v-model="replyToInput"
         class="flex-grow"
       />
@@ -21,7 +21,7 @@
 
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Cc </span>
-      <Input
+      <ChipsInput
         v-model="ccInput"
         class="flex-grow"
       />
@@ -29,7 +29,7 @@
 
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Bcc </span>
-      <Input
+      <ChipsInput
         v-model="bccInput"
         class="flex-grow"
       />
@@ -56,19 +56,17 @@
 </template>
 
 <script setup lang="ts">
+import ChipsInput from './ChipsInput.vue';
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
-import Button from './Button.vue'
 import { ref, watchEffect } from 'vue';
 
 const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
 }>()
 
-let showCc = ref(false);
-let showBcc = ref(false);
-
 let toInput = ref('');
+let replyToInput = ref('');
 let ccInput = ref('');
 let bccInput = ref('');
 let subjectInput = ref('');
@@ -80,6 +78,9 @@ watchEffect(() => {
 
   if (toInput.value) {
     link += `${toInput.value}?`;
+  }
+  if (replyToInput.value) {
+    link += `&replyToInput=${replyToInput.value}?`;
   }
   if (ccInput.value) {
     link += `&cc=${ccInput.value}`
