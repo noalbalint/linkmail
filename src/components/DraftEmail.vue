@@ -6,7 +6,7 @@
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> To </span>
       <ChipsInput
-        v-model="toInput"
+        v-model="toInput[0]"
         class="flex-grow"
       />
     </section>
@@ -14,7 +14,7 @@
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> ReplyTo </span>
       <ChipsInput
-        v-model="replyToInput"
+        v-model="replyToInput[0]"
         class="flex-grow"
       />
     </section>
@@ -22,7 +22,7 @@
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Cc </span>
       <ChipsInput
-        v-model="ccInput"
+        v-model="ccInput[0]"
         class="flex-grow"
       />
     </section>
@@ -30,7 +30,7 @@
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Bcc </span>
       <ChipsInput
-        v-model="bccInput"
+        v-model="bccInput[0]"
         class="flex-grow"
       />
     </section>
