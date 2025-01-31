@@ -1,25 +1,23 @@
 <template>
   <div class="space-y-2">
     <div class="flex flex-shrink flex-wrap items-center border rounded p-1 max-w-2xl mx-5">
-      <span
-        v-for="(item, index) in chips"
+      <div 
+        v-for="(chip, index) in chips" 
         :key="index"
         class="rounded-full px-3 py-1 m-1 flex items-center space-x-1 border-[1px] border-solid"
       >
-        <span>{{ item }}</span>
+        <span>{{ chip }}</span>
         <button
           @click="removeChip(index)"
           class="text-sm font-bold"
         >
           &times;
         </button>
-      </span>
-
-
+      </div>
       <input
         v-model="inputValue"
-        @keydown.enter.prevent="addChip"
-        @keydown.backspace="removeLastChip"
+        @keyup.enter="addChip"
+        @keydown="removeLastChip"
         type="text"
         class="flex-grow border-none outline-none min-w-24 p-1 m-1"
       />
@@ -27,43 +25,43 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, Ref } from 'vue';
+<script setup lang="ts">
+import { ref, watch } from 'vue';
 
-export default {
-  name: 'ChipsInput',
-  setup(_, { emit }) {
-    const inputValue: Ref<string> = ref('');
-    const chips: Ref<string[]> = ref([]);
+const props = defineProps<{
+  modelValue: string
+}>();
 
-    const addChip = () => {
-      const trimmedValue = inputValue.value.trim();
-      if (trimmedValue && !chips.value.includes(trimmedValue)) {
-        chips.value.push(trimmedValue);
-        inputValue.value = '';
-        emit('update:chips', chips.value);
-      }
-    };
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string | string[]): void
+}>();
 
-    const removeChip = (index: number) => {
-      chips.value.splice(index, 1);
-      emit('update:chips', chips.value);
-    };
+let inputValue = ref(props.modelValue);
 
-    const removeLastChip = (event: KeyboardEvent) => {
-      if (inputValue.value === '' && event.key === 'Backspace') {
-        chips.value.pop();
-        emit('update:chips', chips.value);
-      }
-    };
+const chips = ref<string[]>([]);
 
-    return {
-      inputValue,
-      chips,
-      addChip,
-      removeChip,
-      removeLastChip,
-    };
-  },
+watch(chips, (newValue) => {
+  emit('update:modelValue', newValue);
+});
+
+const addChip = () => {
+  const trimmedValue = inputValue.value.trim();
+  if (trimmedValue && !chips.value.includes(trimmedValue)) {
+    chips.value.push(trimmedValue);
+    inputValue.value = '';
+    emit('update:modelValue', chips.value);
+  }
+};
+
+const removeChip = (index: number) => {
+  chips.value.splice(index, 1);
+  emit('update:modelValue', chips.value);
+};
+
+const removeLastChip = (event: KeyboardEvent) => {
+  if (inputValue.value === '' && event.key === 'Backspace') {
+    chips.value.pop();
+    emit('update:modelValue', chips.value);
+  }
 };
 </script>

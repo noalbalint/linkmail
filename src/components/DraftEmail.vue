@@ -65,26 +65,27 @@ const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
 }>()
 
-let toInput = ref('');
-let replyToInput = ref('');
-let ccInput = ref('');
-let bccInput = ref('');
+let toInput = ref(['']);
+let replyToInput = ref(['']);
+let ccInput = ref(['']);
+let bccInput = ref(['']);
 let subjectInput = ref('');
 let bodyInput = ref('');
 
 watchEffect(() => {
   let link = '';
 
-  if (toInput.value) {
-    link += `${toInput.value}?`;
+  if (toInput.value.length) {
+    const recipients = toInput.value.join(',');
+    link += `${recipients}?`;
   }
-  if (replyToInput.value) {
+  if (replyToInput.value.length) {
     link += `&replyToInput=${replyToInput.value}?`;
   }
-  if (ccInput.value) {
+  if (ccInput.value.length) {
     link += `&cc=${ccInput.value}`
   }
-  if (bccInput.value) {
+  if (bccInput.value.length) {
     link += `&bcc=${bccInput.value}`
   }
   if (subjectInput.value) {

@@ -11,7 +11,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
-let inputValue = ref('');
+const props = defineProps<{
+  modelValue: string
+}>();
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void
+}>();
+
+let inputValue = ref(props.modelValue);
+
+watch(inputValue, (newValue) => {
+  emit('update:modelValue', newValue);
+});
 </script>
