@@ -16,6 +16,7 @@
       </div>
       <input
         v-model="inputValue"
+        @blur="addChip"
         @keyup.enter="addChip"
         @keydown="removeLastChip"
         type="text"
@@ -40,7 +41,7 @@ let inputValue = ref(props.modelValue);
 
 const chips = ref<string[]>([]);
 
-watch(chips, (newValue) => {
+watch((chips), (newValue) => {
   emit('update:modelValue', newValue);
 });
 
