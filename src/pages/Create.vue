@@ -42,10 +42,7 @@
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 // TODO: @ alias; avoid relative imports
 import DraftEmail from '../components/DraftEmail.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue';
@@ -70,7 +67,7 @@ async function setEmailInDB() {
 async function createNewLinkmail() {
   linkLoading.value = true;
   const newId = await setEmailInDB();
-  linkmailCode.value = `https://linkmail.co/consume?mailcode=${newId}`;
+  linkmailCode.value = `https://linkmail.noal.dev/consume?mailcode=${newId}`;
   linkCreated.value = true;
   linkLoading.value = false;
 }

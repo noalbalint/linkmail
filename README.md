@@ -12,7 +12,7 @@ Unfortunately, the dopamine-rich social media landscape of social media is extre
 
 #### Linkmail eliminates this friction by providing a simple 3-click solution to help campaigns succeed in this uniquely constrained environment.
 
-We also hope to encourage more people to become micro-campaigners with the intuitive, simple interface of [linkmail.co/](https://linkmail.co/). Political staffers put more weight on individual, unique emails. So thousands of people writing emails for dozens of their peers is more influential than dozens of organizations writing emails for thousands of their members.
+We also hope to encourage more people to become micro-campaigners with the intuitive, simple interface of [linkmail](https://linkmail.noal.dev). Political staffers put more weight on individual, unique emails. So thousands of people writing emails for dozens of their peers is more influential than dozens of organizations writing emails for thousands of their members.
 
 ## Product Roadmap
 

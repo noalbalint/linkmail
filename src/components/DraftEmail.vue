@@ -73,7 +73,6 @@ let subjectInput = ref('');
 let bodyInput = ref('');
 
 watchEffect(() => {
-  // TODO: update to linkmail.co
   let link = '';
 
   if (toInput.value) {

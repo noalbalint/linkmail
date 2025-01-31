@@ -4,7 +4,7 @@
     <router-view class="p-4 max-w-7xl w-full" />
     <span class="beta-banner">beta preview - <a
         target="_blank"
-        href="https://linkmail.co/consume?mailcode=6x4ChBKrQ9pXzcVudSQe"
+        href="https://linkmail.noal.dev/consume?mailcode=6x4ChBKrQ9pXzcVudSQe"
       >your
         feedback</a> is apprecaited!!</span>
   </div>

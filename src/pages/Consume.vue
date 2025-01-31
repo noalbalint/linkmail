@@ -6,10 +6,7 @@
   </div>
 </template>
 
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import { db } from '../../firebase.ts'
 import { doc, getDoc } from "firebase/firestore";

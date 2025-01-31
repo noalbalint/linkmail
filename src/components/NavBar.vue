@@ -17,7 +17,7 @@
             href="https://github.com/noalbalint/linkmail"
             target="_blank"
           >
-            linkmail.co
+            linkmail
           </a>
         </SecondaryButton>
       </section>
