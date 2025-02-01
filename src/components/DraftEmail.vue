@@ -11,7 +11,10 @@
       />
     </section>
 
-    <section class="flex m-1">
+    <section 
+      v-if="showReplyTo"
+      class="flex m-1"
+    >
       <span class="pl-2 pt-3 w-16"> ReplyTo </span>
       <ChipsInput
         v-model="replyToInput[0]"
@@ -19,7 +22,10 @@
       />
     </section>
 
-    <section class="flex m-1">
+    <section
+      v-if="showCC"
+      class="flex m-1"
+    >
       <span class="pl-2 pt-3 w-16"> Cc </span>
       <ChipsInput
         v-model="ccInput[0]"
@@ -27,7 +33,10 @@
       />
     </section>
 
-    <section class="flex m-1">
+    <section
+      v-if="showBcc"
+      class="flex m-1"
+    >
       <span class="pl-2 pt-3 w-16"> Bcc </span>
       <ChipsInput
         v-model="bccInput[0]"
@@ -45,8 +54,30 @@
 
     <hr class="mt-2 mb-1">
 
-    <section class="flex m-1">
-      <span class="pl-2 pt-3 w-16"> Body </span>
+    <section class="flex m-1 flex-grow">
+      <div class="flex flex-col justify-center content-center items-center">
+        <span class="pl-2 pt-3 w-16"> Body </span>
+        <div class="h-full" />
+        <span class="pl-2 py-3 w-16 underline"> More </span>
+        <AdditionalField
+          @toggleField="showReplyTo = !showReplyTo"
+          :currentValue="showReplyTo"
+          class="ml-2"
+          fieldName="ReplyTo"
+        />
+        <AdditionalField
+          @toggleField="showCC = !showCC"
+          :currentValue="showCC"
+          class="ml-2"
+          fieldName="Cc"
+        />
+        <AdditionalField
+          @toggleField="showBcc = !showBcc"
+          :currentValue="showBcc"
+          class="ml-2"
+          fieldName="Bcc"
+        />
+      </div>
       <TextArea
         class="flex-grow"
         v-model="bodyInput"
@@ -57,6 +88,7 @@
 
 <script setup lang="ts">
 import ChipsInput from './ChipsInput.vue';
+import AdditionalField from './AdditionalField.vue';
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
 import { ref, watchEffect } from 'vue';
@@ -64,6 +96,10 @@ import { ref, watchEffect } from 'vue';
 const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
 }>()
+
+let showReplyTo = ref(false);
+let showCC = ref(false);
+let showBcc = ref(false);
 
 let toInput = ref(['']);
 let replyToInput = ref(['']);
@@ -107,5 +143,11 @@ watchEffect(() => {
 <style>
 .draft-email {
   background-color: white;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 4px;
 }
 </style>
