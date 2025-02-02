@@ -11,17 +11,6 @@
       />
     </section>
 
-    <section 
-      v-if="showReplyTo"
-      class="flex m-1"
-    >
-      <span class="pl-2 pt-3 w-16"> ReplyTo </span>
-      <ChipsInput
-        v-model="replyToInput"
-        class="flex-grow"
-      />
-    </section>
-
     <section
       v-if="showCC"
       class="flex m-1"
@@ -55,26 +44,18 @@
     <hr class="mt-2 mb-1">
 
     <section class="flex m-1 flex-grow">
-      <div class="flex flex-col justify-center content-center items-center">
-        <span class="pl-2 pt-3 w-16"> Body </span>
+      <div class="flex flex-col items-center">
+        <span class="pl-2 pt-3 w-[72px]"> Body </span>
         <div class="h-full" />
-        <span class="pl-2 py-3 w-16 underline"> More </span>
-        <AdditionalField
-          @toggleField="showReplyTo = !showReplyTo"
-          :currentValue="showReplyTo"
-          class="ml-2"
-          fieldName="ReplyTo"
-        />
+        <span class="py-1 underline"> More </span>
         <AdditionalField
           @toggleField="showCC = !showCC"
           :currentValue="showCC"
-          class="ml-2"
           fieldName="Cc"
         />
         <AdditionalField
           @toggleField="showBcc = !showBcc"
           :currentValue="showBcc"
-          class="ml-2"
           fieldName="Bcc"
         />
       </div>
@@ -97,12 +78,10 @@ const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
 }>()
 
-let showReplyTo = ref(false);
 let showCC = ref(false);
 let showBcc = ref(false);
 
 let toInput = ref(['']);
-let replyToInput = ref(['']);
 let ccInput = ref(['']);
 let bccInput = ref(['']);
 let subjectInput = ref('');
@@ -114,9 +93,6 @@ watchEffect(() => {
   if (toInput.value.length) {
     const recipients = toInput.value.join(',');
     link += `${recipients}?`;
-  }
-  if (replyToInput.value.length) {
-    link += `&replyToInput=${replyToInput.value}?`;
   }
   if (ccInput.value.length) {
     link += `&cc=${ccInput.value}`
