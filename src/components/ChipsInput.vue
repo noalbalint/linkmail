@@ -29,15 +29,11 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
-const props = defineProps<{
-  modelValue: string | string[];
-}>();
-
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string[]): void
 }>();
 
-let inputValue = ref(props.modelValue);
+let inputValue = ref('');
 
 const chips = ref<string[]>([]);
 
