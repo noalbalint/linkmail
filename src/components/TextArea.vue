@@ -3,7 +3,7 @@
     <label class="flex flex-grow">
       <textarea
         :class="customClass"
-        class="min-h-52 p-1 ml-1 border-solid border-[1px] rounded border-grey-500
+        class="min-h-30 p-1 ml-1 border-solid border-[1px] rounded border-grey-500
         max-w-2xl mx-3"
         @input="onInput"
         :placeholder="placeholder"
