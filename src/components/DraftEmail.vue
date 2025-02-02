@@ -57,6 +57,7 @@
           @toggleField="showBcc = !showBcc"
           :currentValue="showBcc"
           fieldName="Bcc"
+          class="mb-2"
         />
       </div>
       <TextArea
