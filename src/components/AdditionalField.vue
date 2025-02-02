@@ -4,7 +4,7 @@
     class="additionalField"
     :data-after-content="afterContent"
   >
-    <p class="text-left w-16 fieldName">
+    <p class="text-center w-10 fieldName">
       {{ props.fieldName }}
     </p>
   </div>
@@ -23,7 +23,7 @@ const emits = defineEmits<{
 }>();
 
 const afterContent = computed(() => {
-  return props.currentValue ? 'remove' : 'add';
+  return props.currentValue ? 'x' : '+';
 });
 </script>
 
@@ -47,7 +47,7 @@ const afterContent = computed(() => {
 .additionalField:hover::after {
   content: attr(data-after-content);
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   visibility: visible;
