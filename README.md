@@ -43,5 +43,7 @@ this will tell tailwind to watch for new classes and add necessary css to the st
 
 #### To deploy (maintainers only):
 - npm run build
-- firebase staging (to test)
 - firebase deploy
+
+### Staging Deployments:
+- firebase hosting:channel:deploy temporaryChanelName
