@@ -23,7 +23,7 @@ const emits = defineEmits<{
 }>();
 
 const afterContent = computed(() => {
-  return props.currentValue ? 'x' : '+';
+  return props.currentValue ? 'remove' : 'add';
 });
 </script>
 
