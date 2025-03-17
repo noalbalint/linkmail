@@ -11,7 +11,7 @@
       In the dopamine-saturated mobile landscape, small
       improvements in usability cause large increases in user engagement. With our unique one-click
       solution, we hope to do for mobile-first email campaigns what ApplePay did for online purchases: reduce friction
-      to increase completion.
+      to increase conversion.
       <br>
       <br>
     <p class="text-center font-extrabold">
