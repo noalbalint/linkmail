@@ -63,11 +63,23 @@ const state: IState = reactive({
 });
 
 const hasMailData = computed(() => {
+  const hasBody = emailStore.body.length > 0;
+  const hasSubject = emailStore.subject.length > 0;
   const hasValidRecipients = emailStore.to.length > 0 && emailStore.to.every((recipient) => {
-    return recipient.includes('@') && recipient.includes('.');
+    const isValidEmailAddress = recipient.includes('@') && recipient.includes('.');
+    return isValidEmailAddress;
   });
 
-  return hasValidRecipients && emailStore.subject.length > 0 && emailStore.body.length > 0;
+  return hasValidRecipients && hasSubject && hasBody;
+
+  /**
+   * alternatively: 
+   * 
+   * return emailStore.body.length > 0; && emailStore.subject.length > 0; && emailStore.to.length > 0
+   *  && emailStore.to.every((recipient) => {
+   *   return recipient.includes('@') && recipient.includes('.');
+   *  });
+   */
 });
 
 async function createNewLinkmail(): Promise<void> {
