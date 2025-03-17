@@ -42,8 +42,12 @@ this will start the development server and send live updates to http://localhost
 this will tell tailwind to watch for new classes and add necessary css to the style sheets
 
 #### To deploy (maintainers only):
-- npm run build
-- firebase deploy
+- `npm run build`
+- `firebase deploy`
+
+#### Testing
+
+This app uses Cypress for e2e tests. Run these with `npx cypress open` from the project root.
 
 ### Staging Deployments:
 - firebase hosting:channel:deploy temporaryChanelName
