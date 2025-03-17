@@ -2,34 +2,28 @@
   <div class="flex flex-col p-2">
     <label class="flex flex-grow">
       <textarea
-        :class="customClass"
-        class="min-h-30 p-1 ml-1 border-solid border-[1px] rounded border-grey-500
-        max-w-2xl mx-3"
+        class="border-solid border-[1px] rounded border-grey-500 min-h-30 p-3 ml-1 max-w-2xl mx-3"
         @input="onInput"
-        :placeholder="placeholder"
       ></textarea>
     </label>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  placeholder?: string,
-  customClass?: string,
-}>()
-
 const emit = defineEmits<{
   (name: 'update:modelValue', type: string): void;
 }>();
 
-function onInput(event: Event): void {
-  // Resize text area
+function growTextArea(event: Event): void {
   const textarea = event.target as HTMLTextAreaElement;
   textarea.style.height = 'auto';
   textarea.style.height = textarea.scrollHeight + 'px';
+}
 
-  // Send the updated value to the parent
-  emit('update:modelValue', textarea.value);
+function onInput(event: Event): void {
+  const inputValue = (event.target as HTMLTextAreaElement).value;
+  growTextArea(event);
+  emit('update:modelValue', inputValue);
 }
 </script>
 
