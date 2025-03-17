@@ -2,7 +2,7 @@
   <div class="space-y-2">
     <div class="flex flex-shrink flex-wrap items-center border rounded p-1 max-w-2xl mx-5">
       <div 
-        v-for="(chip, index) in chips" 
+        v-for="(chip, index) in state.chips" 
         :key="index"
         class="rounded-full px-3 py-1 m-1 flex items-center space-x-1 border-[1px] border-solid"
       >
@@ -15,7 +15,7 @@
         </button>
       </div>
       <input
-        v-model="inputValue"
+        v-model="state.inputValue"
         @blur="addChip"
         @keyup.enter="addChip"
         @keydown="removeLastChip"
@@ -27,38 +27,44 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { reactive, watch } from 'vue';
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string[]): void
 }>();
 
-let inputValue = ref('');
+interface IState {
+  inputValue: string;
+  chips: string[];
+}
 
-const chips = ref<string[]>([]);
+const state: IState = reactive({
+  inputValue: '',
+  chips: [],
+});
 
-watch((chips), (newValue) => {
+watch((state.chips), (newValue) => {
   emit('update:modelValue', newValue);
 });
 
 const addChip = () => {
-  const trimmedValue = inputValue.value.trim();
-  if (trimmedValue && !chips.value.includes(trimmedValue)) {
-    chips.value.push(trimmedValue);
-    inputValue.value = '';
-    emit('update:modelValue', chips.value);
+  const trimmedValue = state.inputValue.trim();
+  if (trimmedValue && !state.chips.includes(trimmedValue)) {
+    state.chips.push(trimmedValue);
+    state.inputValue = '';
+    emit('update:modelValue', state.chips);
   }
 };
 
 const removeChip = (index: number) => {
-  chips.value.splice(index, 1);
-  emit('update:modelValue', chips.value);
+  state.chips.splice(index, 1);
+  emit('update:modelValue', state.chips);
 };
 
 const removeLastChip = (event: KeyboardEvent) => {
-  if (inputValue.value === '' && event.key === 'Backspace') {
-    chips.value.pop();
-    emit('update:modelValue', chips.value);
+  if (state.inputValue === '' && event.key === 'Backspace') {
+    state.chips.pop();
+    emit('update:modelValue', state.chips);
   }
 };
 </script>
