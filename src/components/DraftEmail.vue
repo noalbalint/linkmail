@@ -1,34 +1,34 @@
 <template>
-  <!-- TODO: find a formatter that will newline wrap classes like attributes -->
+  <!-- TODO: compress common groups into reusable custom tailwind classes -->
   <div
     class="draft-email max-w-3xl w-full shadow-md border-solid rounded-lg pt-4 border-black border-2 text-left min-h-[60vh] flex flex-col"
   >
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> To </span>
       <ChipsInput
-        v-model="toInput"
+        v-model="state.toInput"
         class="flex-grow"
       />
     </section>
 
     <section
-      v-if="showCC"
+      v-if="state.showCC"
       class="flex m-1"
     >
       <span class="pl-2 pt-3 w-16"> Cc </span>
       <ChipsInput
-        v-model="ccInput"
+        v-model="state.ccInput"
         class="flex-grow"
       />
     </section>
 
     <section
-      v-if="showBcc"
+      v-if="state.showBcc"
       class="flex m-1"
     >
       <span class="pl-2 pt-3 w-16"> Bcc </span>
       <ChipsInput
-        v-model="bccInput"
+        v-model="state.bccInput"
         class="flex-grow"
       />
     </section>
@@ -36,7 +36,7 @@
     <section class="flex m-1">
       <span class="pl-2 pt-3 w-16"> Subject </span>
       <Input
-        v-model="subjectInput"
+        v-model="state.subjectInput"
         class="flex-grow"
       />
     </section>
@@ -49,20 +49,20 @@
         <div class="h-full" />
         <span class="py-1 underline"> More </span>
         <AdditionalField
-          @toggleField="showCC = !showCC"
-          :currentValue="showCC"
+          @toggleField="state.showCC = !state.showCC"
+          :currentValue="state.showCC"
           fieldName="Cc"
         />
         <AdditionalField
-          @toggleField="showBcc = !showBcc"
-          :currentValue="showBcc"
+          @toggleField="state.showBcc = !state.showBcc"
+          :currentValue="state.showBcc"
           fieldName="Bcc"
           class="mb-2"
         />
       </div>
       <TextArea
         class="flex-grow"
-        v-model="bodyInput"
+        v-model="state.bodyInput"
       ></TextArea>
     </section>
   </div>
@@ -73,28 +73,39 @@ import ChipsInput from './ChipsInput.vue';
 import AdditionalField from './AdditionalField.vue';
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
-import { ref, watchEffect } from 'vue';
+import { reactive, watchEffect } from 'vue';
 import { emailStore } from '../modules/store.ts';
 
 const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
 }>()
 
-let showCC = ref(false);
-let showBcc = ref(false);
+interface IState {
+  showCC: boolean;
+  showBcc: boolean;
+  toInput: string[];
+  ccInput: string[];
+  bccInput: string[];
+  subjectInput: string;
+  bodyInput: string;
+}
 
-let toInput = ref(['']);
-let ccInput = ref(['']);
-let bccInput = ref(['']);
-let subjectInput = ref('');
-let bodyInput = ref('');
+const state: IState = reactive({
+  showCC: false,
+  showBcc: false,
+  toInput: [''],
+  ccInput: [''],
+  bccInput: [''],
+  subjectInput: '',
+  bodyInput: '',
+});
 
 watchEffect(() => {
-  emailStore.to = toInput.value;
-  emailStore.cc = ccInput.value;
-  emailStore.bcc = bccInput.value;
-  emailStore.subject = subjectInput.value;
-  emailStore.body = bodyInput.value;
+  emailStore.to = state.toInput;
+  emailStore.cc = state.ccInput;
+  emailStore.bcc = state.bccInput;
+  emailStore.subject = state.subjectInput;
+  emailStore.body = state.bodyInput;
 });
 
 </script>
