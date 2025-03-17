@@ -1,20 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ConsumeVue from '../pages/Consume.vue';
-import HomeVue from '../pages/Home.vue';
-import AboutVue from '../pages/About.vue';
-import DonateVue from '../pages/Donate.vue';
-
-// TODO: code splitting
+import Home from '../pages/Home.vue';
 
 const routes = [
-  { path: '/', component: HomeVue },
-  { path: '/consume', component: ConsumeVue, },
-  { path: '/about', component: AboutVue, },
-  { path: '/donate', component: DonateVue, },
+  { path: '/', component: Home },
+  { path: '/consume', component: () => import(/* webpackChunkName: "Consume" */ '../pages/Consume.vue') },
+  { path: '/about', component: () => import(/* webpackChunkName: "About" */ '../pages/About.vue') },
+  { path: '/donate', component: () => import(/* webpackChunkName: "Donate" */ '../pages/Donate.vue') },
 ]
 
 const router = createRouter({
-  // NOTE: if we have routing problems with the server, try reverting to createWebHistory
   history: createWebHistory(),
   routes,
 })
