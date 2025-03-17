@@ -22,6 +22,7 @@
         <a
           :href="state.linkmailCode"
           target="_blank"
+          data-test-id="mail-link"
         >{{ state.linkmailCode }}</a>
         <Button
           minWidth="100px"
