@@ -43,7 +43,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO: @ alias; avoid relative imports
 import DraftEmail from '../components/DraftEmail.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue';
 import Button from '../components/Button.vue'

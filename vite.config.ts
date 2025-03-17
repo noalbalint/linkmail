@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// TODO: alias @ imports
+// TODO: @ import aliases to replace relative imports
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -30,7 +30,7 @@
     for thousands of members. This is the vision for Linkmail.
     </p>
 
-    <section class="flex flex-col-reverse items-center lg:flex-row pt-6">
+    <section class="flex flex-col-reverse start-center lg:flex-row pt-6">
       <video
         controls
         preload="auto"
@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    <section class="lg:h-[456px] flex flex-col-reverse items-center lg:flex-row pt-6">
+    <section class="lg:h-[456px] flex flex-col-reverse items-start lg:flex-row pt-6">
       <video
         controls
         preload="auto"
@@ -68,7 +68,7 @@
         :src="video2"
         style="max-width: 200px;"
       />
-      <div class="pl-5 flex flex-col justify-center py-2 h-full">
+      <div class="pl-5 flex flex-col py-2 h-full">
         <span>
           Linkmail vastly simplifies this by compressing more information into the link being shared.
           <br />
@@ -80,11 +80,6 @@
           <li>Add name (optional)</li>
           <li>Send!</li>
         </ul>
-        <br>
-        <span class="pb-4 lg:pb-0">
-          NOTE: in both demos, you'll see that I must slightly reformat the email content. This is due to a
-          problem with my phone specifically, and most users won't experience this.
-        </span>
       </div>
     </section>
   </div>

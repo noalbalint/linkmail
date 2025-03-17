@@ -13,11 +13,11 @@ const firebaseConfig = {
   measurementId: "G-9G7NFENEXL"
 };
 
-// TODO: fix permissions config. seems I'm missing this at the moment.
+// TODO: update permissions config before launch
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app); // is this hooked up yet? or just copied from AtNoal
+const analytics = getAnalytics(app);
 
 export {
   app,
