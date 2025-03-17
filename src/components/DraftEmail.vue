@@ -107,7 +107,6 @@ watchEffect(() => {
   emailStore.subject = state.subjectInput;
   emailStore.body = state.bodyInput;
 });
-
 </script>
 
 <style>

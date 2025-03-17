@@ -43,9 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import DraftEmail from '../components/DraftEmail.vue'
-import LoadingSpinner from '../components/LoadingSpinner.vue';
-import Button from '../components/Button.vue'
+import DraftEmail from './DraftEmail.vue'
+import LoadingSpinner from './LoadingSpinner.vue';
+import Button from './Button.vue'
 import { pushEmail } from '../api';
 import { computed, reactive } from 'vue';
 import { emailStore } from '../modules/store';
@@ -68,17 +68,17 @@ const hasMailData = computed(() => {
   });
 
   return hasValidRecipients && emailStore.subject.length > 0 && emailStore.body.length > 0;
-
 });
 
-async function createNewLinkmail() {
+async function createNewLinkmail(): Promise<void> {
   state.linkLoading = true;
-  const mailId = await pushEmail(emailStore.mailtoValue);
+  const mailtoLink = emailStore.mailtoValue;
+  const mailId = await pushEmail(mailtoLink);
   state.linkmailCode = `https://linkmail.noal.dev/consume?mailcode=${mailId}`;
   state.linkLoading = false;
 }
 
-async function copyLinkToClipboard() {
+async function copyLinkToClipboard(): Promise<void> {
   await navigator.clipboard.writeText(state.linkmailCode);
   state.linkCopied = true;  
 }
