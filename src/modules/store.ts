@@ -20,7 +20,7 @@ const emailStore: IEmailStore = reactive({
   }),
 });
 
-function buildMailtoValue() {
+function buildMailtoValue(): string {
   let link = '';
 
   if (emailStore.to.length) {

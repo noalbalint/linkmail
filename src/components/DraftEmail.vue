@@ -76,10 +76,6 @@ import TextArea from './TextArea.vue';
 import { reactive, watchEffect } from 'vue';
 import { emailStore } from '../modules/store.ts';
 
-const emit = defineEmits<{
-  (emit: 'update:modelValue', type: string): void;
-}>()
-
 interface IState {
   showCC: boolean;
   showBcc: boolean;
