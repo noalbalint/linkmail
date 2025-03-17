@@ -69,4 +69,6 @@ describe('Create Page Spec', () => {
     cy.get('TextArea').type('hey your app was helpful to me, thanks!'.repeat(10));
     cy.get('TextArea').should('have.css', 'height', '144px');
   });
+
+  // TODO: add tests for consuming emails. Tricky with firebase 
 })

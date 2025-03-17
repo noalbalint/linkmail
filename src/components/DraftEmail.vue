@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO: compress common groups into reusable custom tailwind classes -->
+  <!-- TODO: compress common groups into reusable classes -->
   <div
     class="draft-email max-w-3xl w-full shadow-md border-solid rounded-lg pt-4 border-black border-2 text-left min-h-[60vh] flex flex-col"
   >
