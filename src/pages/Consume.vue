@@ -1,75 +1,48 @@
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen">
-    <span class="text-2xl pb-4"> {{ linkValidButNoEmailApp ? 'No email app found!' : 'Opening default email app...' }}
-    </span>
-    <span> {{ errorMessage }} </span>
+    <span class="text-2xl pb-4"> Opening default email app... </span>
+    <span v-if="state.errorMessage"> {{ state.errorMessage }} </span>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { db } from '../../firebase.ts'
-import { doc, getDoc } from "firebase/firestore";
+import { computed, onMounted } from 'vue';
+import { getEmail } from '../api';
+import { reactive } from 'vue';
 
-setTimeout(() => {
-  timeoutComplete.value = true;
-}, 10000);
+interface IState {
+  errorMessage: string;
+  emailClientTimeout: NodeJS.Timeout | undefined;
+}
 
-let timeoutComplete = ref(false);
-let emailNotFound = ref(false);
-
-const linkValidButNoEmailApp = computed((): boolean => {
-  return (emailNotFound.value === false) && timeoutComplete.value;
+const state: IState = reactive({
+  errorMessage: '',
+  emailClientTimeout: undefined,
 });
 
-const errorMessage = computed((): string => {
-  if (emailNotFound.value) {
-    return 'Sorry, that link is invalid!'
-  }
-
-  if (timeoutComplete.value) {
-    return 'Please check your device settings and try again :)'
-  }
-
-  return '';
+const mailcode = computed(() => {
+  return new URLSearchParams(window.location.search).get('mailcode');
 });
 
-const urlParams = new URLSearchParams(window.location.search);
-const mailCode = urlParams.get('mailcode');
+onMounted(async() => {
+  await openMailtoLink();
+});
 
-async function getEmail(): Promise<string | null> {
+async function openMailtoLink(): Promise<void> {
+  if (mailcode.value === null) {
+    return Promise.reject('Mailcode is null');
+  }
+
   try {
-    const docRef = await doc(db, "emails", `${mailCode}`);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      return docSnap.data()?.mailto;
-    } else {
-      emailNotFound.value = true;
-      return null;
-    }
+    const mailtoLink = await getEmail(mailcode.value);
+    setTimeout(() => {
+      // If it takes >10s to redirect to a mail app, assume it's not configured - TODO: improve this...
+      state.errorMessage = 'Have you configured a default email app on your device?';
+    }, 10000);
+    window.location.href = `mailto:${mailtoLink}`;
   } catch (error) {
-    console.error("Error getting document:", error);
-  }
-  return null;
-}
-
-async function createMailtoLink(): Promise<string | null> {
-  const email = await getEmail();
-  if (email === null) {
-    return null;
-  }
-  const mailtoLink = `mailto:${email}`;
-  return mailtoLink;
-}
-
-async function openEmailClient() {
-  const mailtoLink = await createMailtoLink();
-  if (mailtoLink !== null) {
-    window.location.href = mailtoLink;
+    state.errorMessage = 'Sorry, that link appears to be invalid!';
+    console.error(error);
   }
 }
-
-openEmailClient();
-
 </script>

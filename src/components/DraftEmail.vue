@@ -74,6 +74,7 @@ import AdditionalField from './AdditionalField.vue';
 import Input from './Input.vue';
 import TextArea from './TextArea.vue';
 import { ref, watchEffect } from 'vue';
+import { emailStore } from '../modules/store.ts';
 
 const emit = defineEmits<{
   (emit: 'update:modelValue', type: string): void;
@@ -89,32 +90,13 @@ let subjectInput = ref('');
 let bodyInput = ref('');
 
 watchEffect(() => {
-  let link = '';
-
-  if (toInput.value.length) {
-    const recipients = toInput.value.join(',');
-    link += `${recipients}?`;
-  }
-  if (ccInput.value.length) {
-    link += `&cc=${ccInput.value}`
-  }
-  if (bccInput.value.length) {
-    link += `&bcc=${bccInput.value}`
-  }
-  if (subjectInput.value) {
-    link += `&subject=${encodeURIComponent(subjectInput.value)}`
-  }
-  if (bodyInput.value) {
-    link += `&body=${encodeURIComponent(bodyInput.value)}`
-  }
-
-  // .replace only replaces the first instance :)
-  link = link.replace("?&", "?");
-
-  emit('update:modelValue', link);
-
-  return link;
+  emailStore.to = toInput.value;
+  emailStore.cc = ccInput.value;
+  emailStore.bcc = bccInput.value;
+  emailStore.subject = subjectInput.value;
+  emailStore.body = bodyInput.value;
 });
+
 </script>
 
 <style>
