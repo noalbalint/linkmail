@@ -1,6 +1,9 @@
 <template>
+  <!-- TODO: implement tooltips -->
   <button
     :style="`min-width: ${minWidth};`"
+    :disabled="disabled"
+    :title="disabled ? disabledMessage : ''"
   >
     <slot>
       {{ label }}
@@ -15,7 +18,8 @@
 defineProps<{
   label?: string,
   minWidth?: string,
-  type?: string,
+  disabled?: boolean,
+  disabledMessage?: string,
 }>()
 </script>
 
@@ -29,12 +33,16 @@ button {
   color: black;
 }
 
-button:hover {
+button:not([disabled]):hover {
   outline: none;
   background-color: #8fbc8fbb; 
 }
 
-button:active {
+button:not([disabled]):active {
   transform: scale(0.95);
+}
+
+button[disabled] {
+  background-color: #d3d3d3;
 }
 </style>

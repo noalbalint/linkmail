@@ -5,6 +5,8 @@
     <div>
       <Button
         v-if="!state.linkmailCode && !state.linkLoading"
+        :disabled="!hasMailData"
+        disabledMessage="Email must have body, subject, and recipient"
         label="Create Link"
         type="primary"
         minWidth="140px"
